@@ -1,20 +1,20 @@
 import React, { PureComponent } from 'react'
+import Box from '@material-ui/core/Box'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
 import MaterialTable from "material-table"
 import EmojiEvents from '@material-ui/icons/EmojiEvents'
-import tableIcons from './icons'
-import characterList from './characterList'
 import Typography from '@material-ui/core/Typography'
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import {
   sortBy,
   prop,
 } from 'ramda'
+import tableIcons from './icons'
+import characterList from './characterList'
+
 
 class App extends PureComponent {
   constructor (props) {
@@ -113,83 +113,91 @@ class App extends PureComponent {
       entries,
     } = this.state
     return (
-      <div style={{ flex: 1 }}>
-        <ExpansionPanel>
-          <ExpansionPanelSummary
-            expandIcon={<ExpandMoreIcon />}
-          >
-            <Typography variant="h5" component="h1">
-              Character Name
-            </Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <FormGroup row>
-              {
-                sortBy(prop('character_name'))(entries).map(entry => (
-                  <FormControlLabel
-                    key={entry.character_name}
-                    control={
-                      <Checkbox
-                        value={entry.index}
-                        color="primary"
-                        onChange={(event, checked) => {
-                          console.log(event, checked)
-                          if (checked) {
-                            this.addByCharacterFilter(entry)
-                          } else {
-                            this.removeByCharacterFilter(entry)
-                          }
-                        }}
+      <Box display="flex" flexDirection="row">
+        <Box flex={1} display="flex">
+          <Box flexGrow={0} display="flex" flexDirection="column">
+            <Card>
+              <CardContent>
+                <Typography variant="h5" component="h1">
+                  Character Name
+                </Typography>
+                <FormGroup row style={{ maxHeight: 400, overflow: 'scroll' }}>
+                  {
+                    sortBy(prop('character_name'))(entries).map(entry => (
+                      <FormControlLabel
+                        style={{ maxWidth: '100%', minWidth: '24%' }}
+                        key={entry.character_name}
+                        control={
+                          <Checkbox
+                            value={entry.index}
+                            color="primary"
+                            onChange={(event, checked) => {
+                              console.log(event, checked)
+                              if (checked) {
+                                this.addByCharacterFilter(entry)
+                              } else {
+                                this.removeByCharacterFilter(entry)
+                              }
+                            }}
+                          />
+                        }
+                        label={entry.character_name}
                       />
-                    }
-                    label={entry.character_name}
-                  />
-                ))
-              }
-            </FormGroup>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
+                    ))
+                  }
+                </FormGroup>
+              </CardContent>
+            </Card>
+          </Box>
+        </Box>
 
-        <MaterialTable
-          icons={tableIcons}
-          actions={[
-            {
-              icon: EmojiEvents,
-              tooltip: 'Mastered',
-              onClick: (event, rowData) => {
-                this.addEntryToStorage({
-                  index: rowData.index,
-                  character_name: rowData.character_name,
-                  ifrit_sb_level: 56,
-                  shiva_sb_level: 56,
-                }, () => null)
+        <Box flex={1} display="flex">
+          <MaterialTable
+            icons={tableIcons}
+            actions={[
+              {
+                icon: EmojiEvents,
+                tooltip: 'Mastered',
+                onClick: (event, rowData) => {
+                  this.addEntryToStorage({
+                    index: rowData.index,
+                    character_name: rowData.character_name,
+                    ifrit_sb_level: 56,
+                    shiva_sb_level: 56,
+                  }, () => null)
+                },
               },
-            },
-          ]}
-          editable={{
-            onRowUpdate: newData =>
-              new Promise((resolve, reject) => {
-                this.addEntryToStorage(newData, resolve)
-              })
-          }}
-          columns={[
-            { title: "Character", field: "character_name", editable: 'never' },
-            { title: "Ifrit SB Level", field: 'ifrit_sb_level', type: 'numeric' },
-            { title: "Shiva SB Level", field: 'shiva_sb_level', type: 'numeric' },
-          ]}
-          data={this.filterEntries()}
-          title="Summon Boards"
-          options={{
-            headerStyle: {
-              backgroundColor: '#044343',
-              color: '#FFF'
-            },
-            rowStyle: {
-              backgroundColor: '#045757',
-            },
-          }}
-        />
-      </div>
+            ]}
+            editable={{
+              onRowUpdate: newData =>
+                new Promise((resolve, reject) => {
+                  this.addEntryToStorage(newData, resolve)
+                })
+            }}
+            columns={[
+              { title: "Character", field: "character_name", editable: 'never', cellStyle: { color: '#ffffff', fontSize: 16 } },
+              { title: "Ifrit SB Level", field: 'ifrit_sb_level', type: 'numeric', cellStyle: { color: '#ffffff', fontSize: 16 } },
+              { title: "Shiva SB Level", field: 'shiva_sb_level', type: 'numeric', cellStyle: { color: '#ffffff', fontSize: 16 } },
+            ]}
+
+            data={this.filterEntries()}
+            title="Summon Boards"
+            options={{
+              paging: false,
+              headerStyle: {
+                backgroundColor: '#044343',
+                color: '#FFF',
+                fontWeight: 'bold',
+                fontSize: 20,
+              },
+              rowStyle: {
+                backgroundColor: '#045757',
+                color: '#fff',
+              },
+            }}
+          />
+        </Box>
+      </Box>
     )
   }
 }
