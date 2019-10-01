@@ -12,9 +12,32 @@ import {
   sortBy,
   prop,
   propEq,
+  difference,
 } from 'ramda'
 import tableIcons from './icons'
 import characterList from './characterList'
+import summonBoards from './summonBoards'
+
+const buildCharacterObject = ({
+  index,
+  character_name,
+  ...summonBoardsProvided,
+}) => {
+  const mergedSummonBoardInfo = summonBoards.reduce((acc, summon) => {
+    const key = `${summon.toLowerCase()}_sb_level`
+    const providedLevel = summonBoardsProvided[key]
+    if (providedLevel) {
+      return { ...acc, [key]: providedLevel }
+    }
+
+    return { ...acc, [key]: 0 }
+  }, {})
+  return {
+    index,
+    character_name,
+    ...mergedSummonBoardInfo,
+  }
+}
 
 class App extends PureComponent {
   constructor (props) {
@@ -22,13 +45,34 @@ class App extends PureComponent {
     let entries = this.getEntries()
     const firstAccess = !entries
     if (firstAccess) {
-      entries = characterList.map((characterName, index) => ({
-        index,
-        character_name: characterName,
-        ifrit_sb_level: 0,
-        shiva_sb_level: 0,
-      }))
+      entries = characterList.map((characterName, index) =>
+        buildCharacterObject({
+          characterName,
+          index,
+        })
+      )
       this.setEntries(entries)
+    }
+
+    const addedSummon = Object.keys(entries[0]).length <
+      Object.keys(
+        buildCharacterObject({ character_name: '', index: 0 })
+      ).length
+    if (addedSummon) {
+      entries = entries.map((entry) => {
+        const entryKeys = Object.keys(entry)
+        const newKeys = Object.keys(
+          buildCharacterObject({ character_name: '', index: 0 })
+        )
+        const differenceSet = difference(newKeys, entryKeys)
+
+        const newEntry = { ...entry }
+        differenceSet.forEach(newSummonKey => {
+          newEntry[newSummonKey] = 0
+        })
+
+        return newEntry
+      })
     }
 
     const addedNewCharacters = entries.length !== characterList.length
@@ -130,6 +174,15 @@ class App extends PureComponent {
     const {
       entries,
     } = this.state
+
+    const summonBoardColumns = summonBoards.map((summonName) =>
+      ({
+        title: `${summonName} SB lvl`,
+        field: `${summonName.toLowerCase()}_sb_level`,
+        type: 'numeric',
+        cellStyle: { color: '#ffffff', fontSize: 16 },
+      })
+    )
     console.log('render', this.state)
     return (
       <Box display="flex" flexDirection="row">
@@ -195,8 +248,7 @@ class App extends PureComponent {
             }}
             columns={[
               { title: "Character", field: "character_name", editable: 'never', cellStyle: { color: '#ffffff', fontSize: 16 } },
-              { title: "Ifrit SB Level", field: 'ifrit_sb_level', type: 'numeric', cellStyle: { color: '#ffffff', fontSize: 16 } },
-              { title: "Shiva SB Level", field: 'shiva_sb_level', type: 'numeric', cellStyle: { color: '#ffffff', fontSize: 16 } },
+              ...summonBoardColumns,
             ]}
 
             data={this.filterEntries()}
