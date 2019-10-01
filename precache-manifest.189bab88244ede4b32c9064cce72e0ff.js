@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c18a395cec1c55495189629fc5c64208",
+    "revision": "95bcd1617f29203aa90cc454d7cff3a1",
     "url": "/dffoo-sheets/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dffoo-sheets/static/css/2.db32d415.chunk.css"
   },
   {
-    "revision": "27fd0a5fe127ff7c1f07",
+    "revision": "581f3b1cbc651ab1ab04",
     "url": "/dffoo-sheets/static/css/main.d498bfb3.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dffoo-sheets/static/js/2.667e2e32.chunk.js"
   },
   {
-    "revision": "27fd0a5fe127ff7c1f07",
-    "url": "/dffoo-sheets/static/js/main.d815e621.chunk.js"
+    "revision": "581f3b1cbc651ab1ab04",
+    "url": "/dffoo-sheets/static/js/main.745921b5.chunk.js"
   },
   {
     "revision": "acf2478c0a5be2c7741c",
