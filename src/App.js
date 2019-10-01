@@ -11,22 +11,41 @@ import Checkbox from '@material-ui/core/Checkbox';
 import {
   sortBy,
   prop,
+  propEq,
 } from 'ramda'
 import tableIcons from './icons'
 import characterList from './characterList'
-
 
 class App extends PureComponent {
   constructor (props) {
     super(props)
     let entries = this.getEntries()
-    if (!entries) {
+    const firstAccess = !entries
+    if (firstAccess) {
       entries = characterList.map((characterName, index) => ({
         index,
         character_name: characterName,
         ifrit_sb_level: 0,
         shiva_sb_level: 0,
       }))
+      this.setEntries(entries)
+    }
+
+    const addedNewCharacters = entries.length !== characterList.length
+    if (addedNewCharacters) {
+      entries = characterList.map((characterName, index) => {
+        const existingDataOnCharacter = entries.filter(propEq('character_name', characterName))
+        if (existingDataOnCharacter) {
+          return existingDataOnCharacter
+        }
+
+        return ({
+          index,
+          character_name: characterName,
+          ifrit_sb_level: 0,
+          shiva_sb_level: 0,
+        })
+      })
       this.setEntries(entries)
     }
 
@@ -108,10 +127,10 @@ class App extends PureComponent {
   }
 
   render = () => {
-    console.log('render', this.state, this.filterEntries())
     const {
       entries,
     } = this.state
+    console.log('render', this.state)
     return (
       <Box display="flex" flexDirection="row">
         <Box flex={1} display="flex">

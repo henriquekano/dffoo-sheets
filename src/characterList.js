@@ -101,6 +101,7 @@ const list = [
   'Porom',
   'Paine',
   'Cinque',
+  'Prompto'
 ]
 
 export default list
