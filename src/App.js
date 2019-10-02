@@ -15,8 +15,8 @@ import {
   difference,
 } from 'ramda'
 import tableIcons from './icons'
-import characterList from './characterList'
-import summonBoards from './summonBoards'
+import characterList from './data/characterList'
+import summonBoards from './data/summonBoards'
 
 const buildCharacterObject = ({
   index,
@@ -47,7 +47,7 @@ class App extends PureComponent {
     if (firstAccess) {
       entries = characterList.map((characterName, index) =>
         buildCharacterObject({
-          characterName,
+          character_name: characterName,
           index,
         })
       )
