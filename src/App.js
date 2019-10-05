@@ -397,7 +397,9 @@ class App extends PureComponent {
             data={this.filterEntries()}
             title="Summon Boards"
             options={{
-              paging: false,
+              paging: true,
+              pageSize: 20,
+              paginationType: 'stepped',
               headerStyle: {
                 backgroundColor: '#044343',
                 color: '#FFF',
