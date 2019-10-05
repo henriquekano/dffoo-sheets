@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react'
 import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
+import Button from '@material-ui/core/Button'
 import CardContent from '@material-ui/core/CardContent'
 import MaterialTable from "material-table"
 import EmojiEvents from '@material-ui/icons/EmojiEvents'
+import MonetizationOn from '@material-ui/icons/MonetizationOn'
 import Typography from '@material-ui/core/Typography'
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -17,6 +19,36 @@ import {
 import tableIcons from './icons'
 import characterList from './data/characterList'
 import summonBoards from './data/summonBoards'
+
+const IS_DEV = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
+const log = (...stuff) => {
+  if (IS_DEV) {
+    console.log(stuff)
+  }
+}
+class SummonBoardLevel {
+  constructor (fieldName, fieldValue) {
+    this.level = { fieldName, fieldValue }
+  }
+
+  calculatedTreasureLevel = () =>
+    this.level.fieldName === 'ifrit_sb_level'
+      ? 20
+      : 21
+
+  calculatedMasterLevel = () => 56
+
+  isTreasured = () => {
+    if (this.level.fieldName === 'ifrit_sb_level') {
+      return this.level.fieldValue >= 20
+    }
+
+    return this.level.fieldValue >= 21
+  }
+
+  isMastered = () =>
+    this.level.fieldValue === 56
+}
 
 const buildCharacterObject = ({
   index,
@@ -131,8 +163,28 @@ class App extends PureComponent {
     })
   }
 
+  updateEntry = (entry) => {
+    const {
+      entries
+    } = this.state
+    const newEntries = entries.map((savedEntry) => {
+      if (savedEntry.index === entry.index) {
+        return {
+          ...savedEntry,
+          ...entry,
+        }
+      }
+      return savedEntry
+    })
+    this.setState({
+      entries: newEntries
+    }, () => {
+      this.setEntries(newEntries)
+    })
+  }
+
   addByCharacterFilter = entry => {
-    console.log('addByCharacterFilter', entry)
+    log('addByCharacterFilter', entry)
     this.setState((prevState) => ({
       filters: {
         byCharacter: [
@@ -144,7 +196,7 @@ class App extends PureComponent {
   }
 
   removeByCharacterFilter = entry => {
-    console.log('removeByCharacterFilter', entry)
+    log('removeByCharacterFilter', entry)
     this.setState((prevState) => ({
       filters: {
         byCharacter: prevState.filters.byCharacter.filter(index =>
@@ -170,6 +222,28 @@ class App extends PureComponent {
     return entries
   }
 
+  handleLevelClick = ({
+    entryId,
+    fieldName,
+    fieldValue,
+  }) => {
+    const sbCalculator = new SummonBoardLevel(fieldName, fieldValue)
+    let newFieldValue = 0
+    if (!sbCalculator.isTreasured()) {
+      newFieldValue = sbCalculator.calculatedTreasureLevel()
+    }
+    if (sbCalculator.isTreasured() && !sbCalculator.isMastered()) {
+      newFieldValue = sbCalculator.calculatedMasterLevel()
+    }
+    if (sbCalculator.isMastered()) {
+      newFieldValue = 0
+    }
+    this.updateEntry({
+      index: entryId,
+      [fieldName]: newFieldValue,
+    })
+  }
+
   render = () => {
     const {
       entries,
@@ -177,13 +251,13 @@ class App extends PureComponent {
 
     const summonBoardColumns = summonBoards.map((summonName) =>
       ({
-        title: `${summonName} SB lvl`,
+        title: `${summonName}`,
         field: `${summonName.toLowerCase()}_sb_level`,
         type: 'numeric',
         cellStyle: { color: '#ffffff', fontSize: 16 },
       })
     )
-    console.log('render', this.state)
+    log('render', this.state)
     return (
       <Box display="flex" flexDirection="row">
         <Box flex={1} display="flex">
@@ -228,6 +302,19 @@ class App extends PureComponent {
             icons={tableIcons}
             actions={[
               {
+                icon: MonetizationOn,
+                tooltip: 'Treasures',
+                onClick: (event, rowData) => {
+                  this.addEntryToStorage({
+                    index: rowData.index,
+                    character_name: rowData.character_name,
+                    ifrit_sb_level: 20,
+                    shiva_sb_level: 21,
+                    ramuh_sb_level: 21,
+                  }, () => null)
+                },
+              },
+              {
                 icon: EmojiEvents,
                 tooltip: 'Mastered',
                 onClick: (event, rowData) => {
@@ -236,6 +323,7 @@ class App extends PureComponent {
                     character_name: rowData.character_name,
                     ifrit_sb_level: 56,
                     shiva_sb_level: 56,
+                    ramuh_sb_level: 56,
                   }, () => null)
                 },
               },
@@ -250,7 +338,62 @@ class App extends PureComponent {
               { title: "Character", field: "character_name", editable: 'never', cellStyle: { color: '#ffffff', fontSize: 16 } },
               ...summonBoardColumns,
             ]}
-
+            components={{
+              Cell: (props) => {
+                const {
+                  rowData: {
+                    index,
+                  },
+                  columnDef: {
+                    field,
+                  },
+                  value,
+                } = props
+                const cellValue = props.rowData[props.columnDef.field]
+                const sbCalculator = new SummonBoardLevel(props.columnDef.field, cellValue)
+                let boardStatusColor = {}
+                if (sbCalculator.isTreasured()) {
+                  boardStatusColor = { backgroundColor: 'lightblue' }
+                }
+                if (sbCalculator.isMastered()) {
+                  boardStatusColor = { backgroundColor: '#ffcc00' }
+                }
+                return (
+                  <td
+                    style={{
+                      ...props.columnDef.cellStyle,
+                      border: '1px solid white',
+                      ...boardStatusColor,
+                    }}
+                  >
+                    <Box display="flex" style={{
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}>
+                      {
+                        props.columnDef.editable === 'never'
+                          ? cellValue
+                          : (
+                            <Button
+                              onClick={() => this.handleLevelClick({
+                                entryId: index,
+                                fieldName: field,
+                                fieldValue: value,
+                              })}
+                              variant="outlined"
+                              style={{
+                                backgroundColor: 'white',
+                              }}
+                            >
+                              { cellValue }
+                            </Button>
+                          )
+                      }
+                    </Box>
+                  </td>
+                )
+              },
+            }}
             data={this.filterEntries()}
             title="Summon Boards"
             options={{
@@ -260,6 +403,7 @@ class App extends PureComponent {
                 color: '#FFF',
                 fontWeight: 'bold',
                 fontSize: 20,
+                border: '1px solid white',
               },
               rowStyle: {
                 backgroundColor: '#045757',
