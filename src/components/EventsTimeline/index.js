@@ -27,7 +27,7 @@ const randomColorGenerator = getRandomColor()
 const toTimestamp = date =>
   parseInt(date.format('X'))
 
-const DateIndicator = ({ date, style }) => (
+const DateIndicator = ({ date, style, color }) => (
   <Box
     display="flex"
     style={{
@@ -38,11 +38,11 @@ const DateIndicator = ({ date, style }) => (
     }}
   >
     <Box style={{ height: 20 }}>
-      <Typography>
+      <Typography style={{ color: color || 'black' }}>
         { date }
       </Typography>
     </Box>
-    <Box style={{ borderRight: '1px solid grey', height: '100%', width: 0 }} />
+    <Box style={{ borderRight: `1px solid ${color || 'black'}`, height: '100%', width: 0 }} />
   </Box>
 )
 
@@ -82,6 +82,22 @@ const DateOverlay = ({
     date = date.subtract(daysInterval, 'days')
   }
 
+  const formattedDate = moment().format('YY/MMM/DD')
+  const leftSpacing = (toTimestamp(dateEnd) - toTimestamp(moment())) * width
+    / (toTimestamp(dateEnd) - toTimestamp(dateStart))
+  timeSeparators = [
+    ...timeSeparators,
+    <DateIndicator
+      key={formattedDate}
+      color="red"
+      style={{
+        position: 'absolute',
+        left: leftSpacing,
+        top: 0,
+      }}
+    />,
+  ]
+
   return timeSeparators
 }
 
@@ -101,7 +117,7 @@ const formatCharacterName = R.pipe(
 )
 
 
-const Lane = ({ lane, limits, width }) => {
+const Lane = ({ onClickEvent, lane, limits, width }) => {
   const [dateStartString, dateEndString] = limits
 
   const dateStart = moment(dateStartString)
@@ -160,6 +176,7 @@ const Lane = ({ lane, limits, width }) => {
             top: 0,
             padding: 0,
           }}
+          onClick={() => onClickEvent(event)}
         >
           { eventTitle }
         </Button>
@@ -177,6 +194,7 @@ const Lane = ({ lane, limits, width }) => {
 const EventsTimeline = ({
   limits,
   lanes,
+  onClickEvent,
 }) => {
   return (
     <Box display="flex" style={{ overflowX: 'auto', position: 'relative' }}>
@@ -189,6 +207,7 @@ const EventsTimeline = ({
               lane={lane}
               width={10000}
               limits={limits}
+              onClickEvent={onClickEvent}
             />
           ))
         }

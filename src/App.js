@@ -24,8 +24,10 @@ import {
 import tableIcons from './icons'
 import characterList from './data/characterList'
 import summonBoards from './data/summonBoards'
-import * as dffoodb from './thirdPartyReaders/dffoodb'
+import createDffoodbParser from './thirdPartyReaders/dffoodb'
 import { EventsTimeline } from './components'
+
+const dffoodb = createDffoodbParser('global')
 
 const IS_DEV = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
 const log = (...stuff) => {
@@ -240,6 +242,10 @@ class App extends PureComponent {
     return entries
   }
 
+  handleEventClick = (event) => {
+    console.log(event)
+  }
+
   handleLevelClick = ({
     entryId,
     fieldName,
@@ -288,12 +294,13 @@ class App extends PureComponent {
         <Card>
           <CardContent>
             <Typography variant="h5" component="h1">
-              Events chronogram
+              Events history
             </Typography>
             <Box style={{ padding: 10 }}>
               <EventsTimeline
                 lanes={events.data}
                 limits={events.limits}
+                onClickEvent={this.handleEventClick}
               />
             </Box>
           </CardContent>
