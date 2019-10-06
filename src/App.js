@@ -4,21 +4,28 @@ import Card from '@material-ui/core/Card'
 import Button from '@material-ui/core/Button'
 import CardContent from '@material-ui/core/CardContent'
 import MaterialTable from "material-table"
+import 'react-big-calendar/lib/css/react-big-calendar.css'
 import EmojiEvents from '@material-ui/icons/EmojiEvents'
 import MonetizationOn from '@material-ui/icons/MonetizationOn'
 import Typography from '@material-ui/core/Typography'
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+import FormGroup from '@material-ui/core/FormGroup'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import Checkbox from '@material-ui/core/Checkbox'
 import {
   sortBy,
   prop,
   propEq,
   difference,
+  pathOr,
+  path,
+  applySpec,
+  map,
 } from 'ramda'
 import tableIcons from './icons'
 import characterList from './data/characterList'
 import summonBoards from './data/summonBoards'
+import * as dffoodb from './thirdPartyReaders/dffoodb'
+import { EventsTimeline } from './components'
 
 const IS_DEV = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
 const log = (...stuff) => {
@@ -131,6 +138,17 @@ class App extends PureComponent {
         byCharacter: [],
       },
     }
+  }
+
+  getFormatterEvents = () => {
+    const formatToCalendar = applySpec({
+      title: pathOr('ERROR', ['title', 'gl']),
+      start: path(['dates', 'gl', 0]),
+      end: path(['dates', 'gl', 1]),
+      resource: path(['chara']),
+    })
+
+    return map(formatToCalendar)(dffoodb.getEvents())
   }
 
   getEntries = () => {
@@ -258,163 +276,185 @@ class App extends PureComponent {
       })
     )
     log('render', this.state)
+
+    const events = dffoodb.calculateEventsInPercentage(
+      dffoodb.organizeEventsInLanes(
+        dffoodb.getEvents()
+      )
+    )
+
     return (
-      <Box display="flex" flexDirection="row">
-        <Box flex={1} display="flex">
-          <Box flexGrow={0} display="flex" flexDirection="column">
-            <Card>
-              <CardContent>
-                <Typography variant="h5" component="h1">
-                  Character Name
-                </Typography>
-                <FormGroup row style={{ maxHeight: 400, overflow: 'scroll' }}>
-                  {
-                    sortBy(prop('character_name'))(entries).map(entry => (
-                      <FormControlLabel
-                        style={{ maxWidth: '100%', minWidth: '24%' }}
-                        key={entry.character_name}
-                        control={
-                          <Checkbox
-                            value={entry.index}
-                            color="primary"
-                            onChange={(event, checked) => {
-                              console.log(event, checked)
-                              if (checked) {
-                                this.addByCharacterFilter(entry)
-                              } else {
-                                this.removeByCharacterFilter(entry)
-                              }
-                            }}
-                          />
-                        }
-                        label={entry.character_name}
-                      />
-                    ))
+      <>
+        <Card>
+          <CardContent>
+            <Typography variant="h5" component="h1">
+              Events chronogram
+            </Typography>
+            <Box style={{ padding: 10 }}>
+              <EventsTimeline
+                lanes={events.data}
+                limits={events.limits}
+              />
+            </Box>
+          </CardContent>
+        </Card>
+        <Box display="flex" flexDirection="row">
+          <Box flex={1} display="flex">
+            <Box flexGrow={0} display="flex" flexDirection="column">
+              <Card>
+                <CardContent>
+                  <Typography variant="h5" component="h1">
+                    Character Name
+                  </Typography>
+                  <FormGroup row style={{ maxHeight: 400, overflow: 'scroll' }}>
+                    {
+                      sortBy(prop('character_name'))(entries).map(entry => (
+                        <FormControlLabel
+                          style={{ maxWidth: '100%', minWidth: '24%' }}
+                          key={entry.character_name}
+                          control={
+                            <Checkbox
+                              value={entry.index}
+                              color="primary"
+                              onChange={(event, checked) => {
+                                console.log(event, checked)
+                                if (checked) {
+                                  this.addByCharacterFilter(entry)
+                                } else {
+                                  this.removeByCharacterFilter(entry)
+                                }
+                              }}
+                            />
+                          }
+                          label={entry.character_name}
+                        />
+                      ))
+                    }
+                  </FormGroup>
+                </CardContent>
+              </Card>
+            </Box>
+          </Box>
+
+          <Box flex={1} display="flex">
+            <MaterialTable
+              icons={tableIcons}
+              actions={[
+                {
+                  icon: MonetizationOn,
+                  tooltip: 'Treasures',
+                  onClick: (event, rowData) => {
+                    this.addEntryToStorage({
+                      index: rowData.index,
+                      character_name: rowData.character_name,
+                      ifrit_sb_level: 20,
+                      shiva_sb_level: 21,
+                      ramuh_sb_level: 21,
+                    }, () => null)
+                  },
+                },
+                {
+                  icon: EmojiEvents,
+                  tooltip: 'Mastered',
+                  onClick: (event, rowData) => {
+                    this.addEntryToStorage({
+                      index: rowData.index,
+                      character_name: rowData.character_name,
+                      ifrit_sb_level: 56,
+                      shiva_sb_level: 56,
+                      ramuh_sb_level: 56,
+                    }, () => null)
+                  },
+                },
+              ]}
+              editable={{
+                onRowUpdate: newData =>
+                  new Promise((resolve, reject) => {
+                    this.addEntryToStorage(newData, resolve)
+                  })
+              }}
+              columns={[
+                { title: "Character", field: "character_name", editable: 'never', cellStyle: { color: '#ffffff', fontSize: 16 } },
+                ...summonBoardColumns,
+              ]}
+              components={{
+                Cell: (props) => {
+                  const {
+                    rowData: {
+                      index,
+                    },
+                    columnDef: {
+                      field,
+                    },
+                    value,
+                  } = props
+                  const cellValue = props.rowData[props.columnDef.field]
+                  const sbCalculator = new SummonBoardLevel(props.columnDef.field, cellValue)
+                  let boardStatusColor = {}
+                  if (sbCalculator.isTreasured()) {
+                    boardStatusColor = { backgroundColor: 'lightblue' }
                   }
-                </FormGroup>
-              </CardContent>
-            </Card>
+                  if (sbCalculator.isMastered()) {
+                    boardStatusColor = { backgroundColor: '#ffcc00' }
+                  }
+                  return (
+                    <td
+                      style={{
+                        ...props.columnDef.cellStyle,
+                        border: '1px solid white',
+                        ...boardStatusColor,
+                      }}
+                    >
+                      <Box display="flex" style={{
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      }}>
+                        {
+                          props.columnDef.editable === 'never'
+                            ? cellValue
+                            : (
+                              <Button
+                                onClick={() => this.handleLevelClick({
+                                  entryId: index,
+                                  fieldName: field,
+                                  fieldValue: value,
+                                })}
+                                variant="outlined"
+                                style={{
+                                  backgroundColor: 'white',
+                                }}
+                              >
+                                { cellValue }
+                              </Button>
+                            )
+                        }
+                      </Box>
+                    </td>
+                  )
+                },
+              }}
+              data={this.filterEntries()}
+              title="Summon Boards"
+              options={{
+                paging: true,
+                pageSize: 20,
+                paginationType: 'stepped',
+                headerStyle: {
+                  backgroundColor: '#044343',
+                  color: '#FFF',
+                  fontWeight: 'bold',
+                  fontSize: 20,
+                  border: '1px solid white',
+                },
+                rowStyle: {
+                  backgroundColor: '#045757',
+                  color: '#fff',
+                },
+              }}
+            />
           </Box>
         </Box>
-
-        <Box flex={1} display="flex">
-          <MaterialTable
-            icons={tableIcons}
-            actions={[
-              {
-                icon: MonetizationOn,
-                tooltip: 'Treasures',
-                onClick: (event, rowData) => {
-                  this.addEntryToStorage({
-                    index: rowData.index,
-                    character_name: rowData.character_name,
-                    ifrit_sb_level: 20,
-                    shiva_sb_level: 21,
-                    ramuh_sb_level: 21,
-                  }, () => null)
-                },
-              },
-              {
-                icon: EmojiEvents,
-                tooltip: 'Mastered',
-                onClick: (event, rowData) => {
-                  this.addEntryToStorage({
-                    index: rowData.index,
-                    character_name: rowData.character_name,
-                    ifrit_sb_level: 56,
-                    shiva_sb_level: 56,
-                    ramuh_sb_level: 56,
-                  }, () => null)
-                },
-              },
-            ]}
-            editable={{
-              onRowUpdate: newData =>
-                new Promise((resolve, reject) => {
-                  this.addEntryToStorage(newData, resolve)
-                })
-            }}
-            columns={[
-              { title: "Character", field: "character_name", editable: 'never', cellStyle: { color: '#ffffff', fontSize: 16 } },
-              ...summonBoardColumns,
-            ]}
-            components={{
-              Cell: (props) => {
-                const {
-                  rowData: {
-                    index,
-                  },
-                  columnDef: {
-                    field,
-                  },
-                  value,
-                } = props
-                const cellValue = props.rowData[props.columnDef.field]
-                const sbCalculator = new SummonBoardLevel(props.columnDef.field, cellValue)
-                let boardStatusColor = {}
-                if (sbCalculator.isTreasured()) {
-                  boardStatusColor = { backgroundColor: 'lightblue' }
-                }
-                if (sbCalculator.isMastered()) {
-                  boardStatusColor = { backgroundColor: '#ffcc00' }
-                }
-                return (
-                  <td
-                    style={{
-                      ...props.columnDef.cellStyle,
-                      border: '1px solid white',
-                      ...boardStatusColor,
-                    }}
-                  >
-                    <Box display="flex" style={{
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                    }}>
-                      {
-                        props.columnDef.editable === 'never'
-                          ? cellValue
-                          : (
-                            <Button
-                              onClick={() => this.handleLevelClick({
-                                entryId: index,
-                                fieldName: field,
-                                fieldValue: value,
-                              })}
-                              variant="outlined"
-                              style={{
-                                backgroundColor: 'white',
-                              }}
-                            >
-                              { cellValue }
-                            </Button>
-                          )
-                      }
-                    </Box>
-                  </td>
-                )
-              },
-            }}
-            data={this.filterEntries()}
-            title="Summon Boards"
-            options={{
-              paging: true,
-              pageSize: 20,
-              paginationType: 'stepped',
-              headerStyle: {
-                backgroundColor: '#044343',
-                color: '#FFF',
-                fontWeight: 'bold',
-                fontSize: 20,
-                border: '1px solid white',
-              },
-              rowStyle: {
-                backgroundColor: '#045757',
-                color: '#fff',
-              },
-            }}
-          />
-        </Box>
-      </Box>
+      </>
     )
   }
 }
