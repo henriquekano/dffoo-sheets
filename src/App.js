@@ -453,6 +453,9 @@ class App extends PureComponent {
                   fontSize: 20,
                   border: '1px solid white',
                 },
+                actionsCellStyle: {
+                  color: 'white',
+                },
                 rowStyle: {
                   backgroundColor: '#045757',
                   color: '#fff',

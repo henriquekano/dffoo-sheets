@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 import Tooltip from '@material-ui/core/Tooltip'
 import Button from '@material-ui/core/Button'
 import moment from 'moment'
 import * as R from 'ramda'
+
+function useForceUpdate(){
+  const [, set] = useState(true); //boolean state
+  return () => set(value => !value); // toggle the state to force render
+}
+
 
 function* getRandomColor() {
   const goodColors = [
@@ -50,6 +56,14 @@ const DateOverlay = ({
   limits,
   width,
 }) => {
+  const forceUpdate = useForceUpdate()
+  useEffect(() => {
+    const interval = setInterval(() => {
+      forceUpdate()
+    }, 1000000)
+
+    return () => clearInterval(interval)
+  })
   const [dateStartString, dateEndString] = limits
   const dateStart = moment(dateStartString)
   const dateEnd = moment(dateEndString)
@@ -197,7 +211,10 @@ const EventsTimeline = ({
   onClickEvent,
 }) => {
   return (
-    <Box display="flex" style={{ overflowX: 'auto', position: 'relative' }}>
+    <Box
+      display="flex"
+      style={{ overflowX: 'auto', position: 'relative' }}
+    >
       <DateOverlay width={10000} limits={limits}/>
       <Box display="flex" style={{ flexDirection: 'column', paddingTop: 20, overflowY: 'clip' }}>
         {
