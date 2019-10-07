@@ -28,12 +28,11 @@ function* getRandomColor() {
     colorIndex = (colorIndex + 1) % goodColors.length
   }
 }
-const randomColorGenerator = getRandomColor()
 
 const toTimestamp = date =>
   parseInt(date.format('X'))
 
-const DateIndicator = ({ date, style, color }) => (
+const DateIndicator = React.memo(({ date, style, color }) => (
   <Box
     display="flex"
     style={{
@@ -50,9 +49,9 @@ const DateIndicator = ({ date, style, color }) => (
     </Box>
     <Box style={{ borderRight: `1px solid ${color || 'black'}`, height: '100%', width: 0 }} />
   </Box>
-)
+))
 
-const DateOverlay = ({
+const DateOverlay = React.memo(({
   limits,
   width,
 }) => {
@@ -113,7 +112,7 @@ const DateOverlay = ({
   ]
 
   return timeSeparators
-}
+})
 
 const formatCharacterName = R.pipe(
   R.split('_'),
@@ -131,11 +130,13 @@ const formatCharacterName = R.pipe(
 )
 
 
-const Lane = ({ onClickEvent, lane, limits, width }) => {
+const Lane = React.memo(({ onClickEvent, lane, limits, width }) => {
   const [dateStartString, dateEndString] = limits
 
   const dateStart = moment(dateStartString)
   const dateEnd = moment(dateEndString)
+
+  const randomColorGenerator = getRandomColor()
 
   let bars = []
   for (let event of lane) {
@@ -203,9 +204,9 @@ const Lane = ({ onClickEvent, lane, limits, width }) => {
       { bars }
     </Box>
   )
-}
+})
 
-const EventsTimeline = ({
+const EventsTimeline = React.memo(({
   limits,
   lanes,
   onClickEvent,
@@ -215,14 +216,14 @@ const EventsTimeline = ({
       display="flex"
       style={{ overflowX: 'auto', position: 'relative' }}
     >
-      <DateOverlay width={10000} limits={limits}/>
+      <DateOverlay width={2000} limits={limits}/>
       <Box display="flex" style={{ flexDirection: 'column', paddingTop: 20, overflowY: 'clip' }}>
         {
           lanes.map(lane => (
             <Lane
               key={JSON.stringify(lane[0])}
               lane={lane}
-              width={10000}
+              width={2000}
               limits={limits}
               onClickEvent={onClickEvent}
             />
@@ -231,6 +232,6 @@ const EventsTimeline = ({
       </Box>
     </Box>
   )
-}
+})
 
 export default EventsTimeline

@@ -12,6 +12,11 @@ const createDffoodbParser = (realm) => {
     event.title[_realmToAccronym(realm)]
   )
 
+  const _filterXMonthsAgo = (x) => R.filter((event) => {
+    const eventStartDate = moment(event.dates[realmAccronym][0])
+    return eventStartDate.isSameOrAfter(moment().subtract(x, 'months'), 'seconds')
+  })
+
   const _sortByEndDate = R.sortBy(
     R.path(['dates', _realmToAccronym(realm), 1])
   )
@@ -81,6 +86,7 @@ const createDffoodbParser = (realm) => {
     const sorter = _sortByEndDate()
     return R.pipe(
       realmFilter,
+      _filterXMonthsAgo(3),
       sorter,
       R.reverse,
     )([
