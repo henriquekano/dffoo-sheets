@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "58663147b4e208ecff61ed81f85aeceb",
+    "revision": "9548c45bf9a0651351313158a17c025c",
     "url": "/dffoo-sheets/index.html"
   },
   {
-    "revision": "25bbcbde0b7fcd9d5c12",
+    "revision": "38e4c865d2bb5f6efaff",
     "url": "/dffoo-sheets/static/css/2.608ae88a.chunk.css"
   },
   {
-    "revision": "54b4e83b656511089939",
+    "revision": "6cdb331a31e4227e8c57",
     "url": "/dffoo-sheets/static/css/main.d498bfb3.chunk.css"
   },
   {
-    "revision": "25bbcbde0b7fcd9d5c12",
-    "url": "/dffoo-sheets/static/js/2.5f8beec4.chunk.js"
+    "revision": "38e4c865d2bb5f6efaff",
+    "url": "/dffoo-sheets/static/js/2.82db0e75.chunk.js"
   },
   {
-    "revision": "54b4e83b656511089939",
-    "url": "/dffoo-sheets/static/js/main.d74b6c51.chunk.js"
+    "revision": "6cdb331a31e4227e8c57",
+    "url": "/dffoo-sheets/static/js/main.5eb0f441.chunk.js"
   },
   {
     "revision": "acf2478c0a5be2c7741c",
