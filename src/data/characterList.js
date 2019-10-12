@@ -103,6 +103,8 @@ const list = [
   'Cinque',
   'Prompto',
   'Noel',
+  'Alphinaud',
 ]
+// reminder: add only at the bottom of the list
 
 export default list

@@ -1,6 +1,50 @@
 import scrappedEvents from '../data/scrappedPastEvents.json'
 import * as R from 'ramda'
 import moment from 'moment'
+import localCharacterList from '../data/characterList'
+
+const _capitalizeWord = R.pipe(
+  R.juxt([
+    R.pipe(
+      R.head,
+      R.toUpper,
+    ),
+    R.tail,
+  ]),
+  R.join('')
+)
+
+const characterDffooNameToLocalNames = (characterName) => {
+  const idVsCharacterList = R.pipe(
+    R.invert,
+    R.map(R.prop(0)),
+  )(localCharacterList)
+  const convertNameToId = name => {
+    const id = parseInt(idVsCharacterList[name])
+    if (isNaN(id)) {
+      return null
+    }
+    return id
+  }
+  if (characterName === 'cecil_paladin') {
+    return convertNameToId('Paladin Cecil')
+  }
+  if (characterName === 'lann&reynn') {
+    return convertNameToId('Lann & Reynn')
+  }
+  if (characterName === 'yshtola') {
+    return convertNameToId('Y\'shtola')
+  }
+  if (characterName === 'cecil') {
+    return convertNameToId('Dark Cecil')
+  }
+  return convertNameToId(
+    characterName
+      .split('_')
+      .map(_capitalizeWord)
+      .join(' ')
+  )
+}
 
 const createDffoodbParser = (realm) => {
   const _realmToAccronym = realm =>
@@ -182,4 +226,7 @@ const createDffoodbParser = (realm) => {
   }
 }
 
-export default createDffoodbParser
+export {
+  createDffoodbParser,
+  characterDffooNameToLocalNames,
+}

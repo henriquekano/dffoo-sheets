@@ -20,11 +20,22 @@ import {
   path,
   applySpec,
   map,
+  intersection,
+  pipe,
+  length,
+  equals,
+  without,
+  union,
+  reject,
+  isNil,
 } from 'ramda'
 import tableIcons from './icons'
 import characterList from './data/characterList'
 import summonBoards from './data/summonBoards'
-import createDffoodbParser from './thirdPartyReaders/dffoodb'
+import {
+  createDffoodbParser,
+  characterDffooNameToLocalNames,
+} from './thirdPartyReaders/dffoodb'
 import { EventsTimeline } from './components'
 
 const dffoodb = createDffoodbParser('global')
@@ -35,6 +46,7 @@ const log = (...stuff) => {
     console.log(stuff)
   }
 }
+
 class SummonBoardLevel {
   constructor (fieldName, fieldValue) {
     this.level = { fieldName, fieldValue }
@@ -241,7 +253,38 @@ class App extends PureComponent {
   }
 
   handleEventClick = (event) => {
-    console.log(event)
+    const {
+      filters: {
+        byCharacter: characterFilter,
+      },
+    } = this.state
+    const { chara } = event
+
+    const convertedEventCharaterNames = map(
+      characterDffooNameToLocalNames,
+      chara,
+    )
+    log('convertedEventCharaterNames', convertedEventCharaterNames)
+    const hasAllTheEventsCharacters = pipe(
+      intersection(convertedEventCharaterNames),
+      length,
+      equals(chara.length),
+    )
+
+    let newCharacterFilter = []
+    if (hasAllTheEventsCharacters(characterFilter)) {
+      newCharacterFilter = without(convertedEventCharaterNames, characterFilter)
+    } else {
+      newCharacterFilter = union(convertedEventCharaterNames, characterFilter)
+    }
+    newCharacterFilter = reject(isNil, newCharacterFilter)
+    log('newCharacterFilter', newCharacterFilter)
+
+    this.setState({
+      filters: {
+        byCharacter: newCharacterFilter,
+      },
+    })
   }
 
   handleLevelClick = ({
@@ -266,40 +309,53 @@ class App extends PureComponent {
     })
   }
 
-  renderCharacterFilter = () => (
-    <Card>
-      <CardContent>
-        <Typography variant="h5" component="h1">
-          Character Name
-        </Typography>
-        <FormGroup row style={{ maxHeight: 400, overflow: 'scroll' }}>
-          {
-            sortBy(prop('character_name'))(this.state.entries).map(entry => (
-              <FormControlLabel
-                style={{ maxWidth: '100%', minWidth: '24%' }}
-                key={entry.character_name}
-                control={
-                  <Checkbox
-                    value={entry.index}
-                    color="primary"
-                    onChange={(event, checked) => {
-                      console.log(event, checked)
-                      if (checked) {
-                        this.addByCharacterFilter(entry)
-                      } else {
-                        this.removeByCharacterFilter(entry)
-                      }
-                    }}
-                  />
-                }
-                label={entry.character_name}
-              />
-            ))
-          }
-        </FormGroup>
-      </CardContent>
-    </Card>
-  )
+  renderCharacterFilter = () => {
+    const {
+      filters: {
+        byCharacter: characterFilter,
+      },
+    } = this.state
+    const sortedEntries = sortBy(prop('character_name'))(this.state.entries)
+    const isEntryChecked = entry => {
+      const entryId = entry.index
+      return characterFilter.includes(entryId)
+    }
+    return (
+      <Card>
+        <CardContent>
+          <Typography variant="h5" component="h1">
+            Character Name
+          </Typography>
+          <FormGroup row style={{ maxHeight: 400, overflow: 'scroll' }}>
+            {
+              sortedEntries.map(entry => (
+                <FormControlLabel
+                  style={{ maxWidth: '100%', minWidth: '24%' }}
+                  key={entry.character_name}
+                  control={
+                    <Checkbox
+                      value={entry.index}
+                      checked={isEntryChecked(entry)}
+                      color="primary"
+                      onChange={(event, checked) => {
+                        log(event, checked)
+                        if (checked) {
+                          this.addByCharacterFilter(entry)
+                        } else {
+                          this.removeByCharacterFilter(entry)
+                        }
+                      }}
+                    />
+                  }
+                  label={entry.character_name}
+                />
+              ))
+            }
+          </FormGroup>
+        </CardContent>
+      </Card>
+    )
+  }
 
   renderCustomCell = (props) => {
     const {
