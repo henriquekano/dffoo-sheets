@@ -119,7 +119,7 @@ class App extends PureComponent {
     const addedNewCharacters = entries.length !== characterList.length
     if (addedNewCharacters) {
       entries = characterList.map((characterName, index) => {
-        const existingDataOnCharacter = entries.filter(propEq('character_name', characterName))
+        const existingDataOnCharacter = entries.filter(propEq('character_name', characterName))[0]
         if (existingDataOnCharacter) {
           return existingDataOnCharacter
         }
