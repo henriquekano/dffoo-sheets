@@ -124,11 +124,9 @@ class App extends PureComponent {
           return existingDataOnCharacter
         }
 
-        return ({
-          index,
+        return buildCharacterObject({
           character_name: characterName,
-          ifrit_sb_level: 0,
-          shiva_sb_level: 0,
+          index,
         })
       })
       this.setEntries(entries)
@@ -268,11 +266,99 @@ class App extends PureComponent {
     })
   }
 
-  render = () => {
-    const {
-      entries,
-    } = this.state
+  renderCharacterFilter = () => (
+    <Card>
+      <CardContent>
+        <Typography variant="h5" component="h1">
+          Character Name
+        </Typography>
+        <FormGroup row style={{ maxHeight: 400, overflow: 'scroll' }}>
+          {
+            sortBy(prop('character_name'))(this.state.entries).map(entry => (
+              <FormControlLabel
+                style={{ maxWidth: '100%', minWidth: '24%' }}
+                key={entry.character_name}
+                control={
+                  <Checkbox
+                    value={entry.index}
+                    color="primary"
+                    onChange={(event, checked) => {
+                      console.log(event, checked)
+                      if (checked) {
+                        this.addByCharacterFilter(entry)
+                      } else {
+                        this.removeByCharacterFilter(entry)
+                      }
+                    }}
+                  />
+                }
+                label={entry.character_name}
+              />
+            ))
+          }
+        </FormGroup>
+      </CardContent>
+    </Card>
+  )
 
+  renderCustomCell = (props) => {
+    const {
+      rowData: {
+        index,
+      },
+      columnDef: {
+        field,
+      },
+      value,
+    } = props
+    const cellValue = props.rowData[props.columnDef.field]
+    const sbCalculator = new SummonBoardLevel(props.columnDef.field, cellValue)
+    let boardStatusColor = {}
+    if (sbCalculator.isTreasured()) {
+      boardStatusColor = { backgroundColor: 'lightblue' }
+    }
+    if (sbCalculator.isMastered()) {
+      boardStatusColor = { backgroundColor: '#ffcc00' }
+    }
+    return (
+      <td
+        style={{
+          ...props.columnDef.cellStyle,
+          border: '1px solid white',
+          ...boardStatusColor,
+        }}
+      >
+        <Box display="flex" style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+          {
+            props.columnDef.editable === 'never'
+              ? cellValue
+              : (
+                <Button
+                  onClick={() => this.handleLevelClick({
+                    entryId: index,
+                    fieldName: field,
+                    fieldValue: value,
+                  })}
+                  variant="outlined"
+                  style={{
+                    backgroundColor: 'white',
+                  }}
+                >
+                  { cellValue }
+                </Button>
+              )
+          }
+        </Box>
+      </td>
+    )
+  }
+
+  render = () => {
+    const entriesToRender = this.filterEntries()
+    log(entriesToRender)
     const summonBoardColumns = summonBoards.map((summonName) =>
       ({
         title: `${summonName}`,
@@ -308,44 +394,16 @@ class App extends PureComponent {
         <Box display="flex" flexDirection="row">
           <Box flex={1} display="flex">
             <Box flexGrow={0} display="flex" flexDirection="column">
-              <Card>
-                <CardContent>
-                  <Typography variant="h5" component="h1">
-                    Character Name
-                  </Typography>
-                  <FormGroup row style={{ maxHeight: 400, overflow: 'scroll' }}>
-                    {
-                      sortBy(prop('character_name'))(entries).map(entry => (
-                        <FormControlLabel
-                          style={{ maxWidth: '100%', minWidth: '24%' }}
-                          key={entry.character_name}
-                          control={
-                            <Checkbox
-                              value={entry.index}
-                              color="primary"
-                              onChange={(event, checked) => {
-                                console.log(event, checked)
-                                if (checked) {
-                                  this.addByCharacterFilter(entry)
-                                } else {
-                                  this.removeByCharacterFilter(entry)
-                                }
-                              }}
-                            />
-                          }
-                          label={entry.character_name}
-                        />
-                      ))
-                    }
-                  </FormGroup>
-                </CardContent>
-              </Card>
+              { this.renderCharacterFilter() }
             </Box>
           </Box>
 
           <Box flex={1} display="flex">
             <MaterialTable
+              title="Summon Boards"
               icons={tableIcons}
+              data={entriesToRender}
+              // style={{ flex: 0 }}
               actions={[
                 {
                   icon: MonetizationOn,
@@ -385,63 +443,8 @@ class App extends PureComponent {
                 ...summonBoardColumns,
               ]}
               components={{
-                Cell: (props) => {
-                  const {
-                    rowData: {
-                      index,
-                    },
-                    columnDef: {
-                      field,
-                    },
-                    value,
-                  } = props
-                  const cellValue = props.rowData[props.columnDef.field]
-                  const sbCalculator = new SummonBoardLevel(props.columnDef.field, cellValue)
-                  let boardStatusColor = {}
-                  if (sbCalculator.isTreasured()) {
-                    boardStatusColor = { backgroundColor: 'lightblue' }
-                  }
-                  if (sbCalculator.isMastered()) {
-                    boardStatusColor = { backgroundColor: '#ffcc00' }
-                  }
-                  return (
-                    <td
-                      style={{
-                        ...props.columnDef.cellStyle,
-                        border: '1px solid white',
-                        ...boardStatusColor,
-                      }}
-                    >
-                      <Box display="flex" style={{
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                      }}>
-                        {
-                          props.columnDef.editable === 'never'
-                            ? cellValue
-                            : (
-                              <Button
-                                onClick={() => this.handleLevelClick({
-                                  entryId: index,
-                                  fieldName: field,
-                                  fieldValue: value,
-                                })}
-                                variant="outlined"
-                                style={{
-                                  backgroundColor: 'white',
-                                }}
-                              >
-                                { cellValue }
-                              </Button>
-                            )
-                        }
-                      </Box>
-                    </td>
-                  )
-                },
+                Cell: this.renderCustomCell,
               }}
-              data={this.filterEntries()}
-              title="Summon Boards"
               options={{
                 paging: true,
                 pageSize: 20,
