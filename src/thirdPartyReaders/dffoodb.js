@@ -38,6 +38,9 @@ const characterDffooNameToLocalNames = (characterName) => {
   if (characterName === 'cecil') {
     return convertNameToId('Dark Cecil')
   }
+  if (characterName === 'leonhart') {
+    return convertNameToId('Leon')
+  }
   return convertNameToId(
     characterName
       .split('_')

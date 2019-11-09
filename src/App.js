@@ -236,6 +236,14 @@ class App extends PureComponent {
     }))
   }
 
+  clearByCharacterFilter = () => {
+    this.setState({
+      filters: {
+        byCharacter: [],
+      }
+    })
+  }
+
   filterEntries = () => {
     const {
       entries,
@@ -326,6 +334,15 @@ class App extends PureComponent {
           <Typography variant="h5" component="h1">
             Character Name
           </Typography>
+          <Button
+            onClick={this.clearByCharacterFilter}
+            variant="contained"
+            style={{
+              backgroundColor: 'white',
+            }}
+          >
+            Clear
+          </Button>
           <FormGroup row style={{ maxHeight: 400, overflow: 'scroll' }}>
             {
               sortedEntries.map(entry => (

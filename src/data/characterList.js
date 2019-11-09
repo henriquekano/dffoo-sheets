@@ -104,6 +104,8 @@ const list = [
   'Prompto',
   'Noel',
   'Alphinaud',
+  'Aphmau',
+  'Sherlotta',
 ]
 // reminder: add only at the bottom of the list
 
