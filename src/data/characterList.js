@@ -106,6 +106,8 @@ const list = [
   'Alphinaud',
   'Aphmau',
   'Sherlotta',
+  'Garland',
+  'Ultimecia',
 ]
 // reminder: add only at the bottom of the list
 
