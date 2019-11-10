@@ -266,11 +266,11 @@ class App extends PureComponent {
         byCharacter: characterFilter,
       },
     } = this.state
-    const { chara } = event
+    const { chara, glChara } = event
 
     const convertedEventCharaterNames = map(
       characterDffooNameToLocalNames,
-      chara,
+      glChara || chara,
     )
     log('convertedEventCharaterNames', convertedEventCharaterNames)
     const hasAllTheEventsCharacters = pipe(

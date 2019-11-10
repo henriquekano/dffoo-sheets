@@ -1,0 +1,182 @@
+{
+  "events": [
+    {
+      "title": {
+        "gl": "Fangs of Promise",
+        "jp": "誓いを貫く牙"
+      },
+      "event": "fang",
+      "chara": [
+        "fang",
+        "yuna",
+        "tidus"
+      ],
+      "glChara": [
+        "fang",
+        "yuna",
+        "zell"
+      ],
+      "id": 41,
+      "dates": {
+        "gl": [
+          "2019-03-07T02:00:00+00:00",
+          "2019-03-21T01:59:59+00:00"
+        ],
+        "jp": [
+          "2018-05-11T15:00:00+09:00",
+          "2018-05-25T14:59:59+09:00"
+        ]
+      },
+      "lcDates": {
+        "jp": "2019-02-05T15:00:00+09:00",
+        "gl": "2019-11-11T00:00+00:00"
+      }
+    },
+    {
+      "title": {
+        "gl": "Gentle Strength",
+        "jp": "優しき力"
+      },
+      "event": "deuce",
+      "chara": [
+        "deuce",
+        "ace",
+        "aerith"
+      ],
+      "id": 42,
+      "dates": {
+        "gl": [
+          "2019-03-21T02:00:00+00:00",
+          "2019-04-04T01:59:59+00:00"
+        ],
+        "jp": [
+          "2018-05-25T15:00:00+09:00",
+          "2018-06-08T14:59:59+09:00"
+        ]
+      },
+      "lcDates": {
+        "jp": "2019-02-19T15:00:00+09:00",
+        "gl": "2019-11-25T00:00:00+00:00"
+      }
+    },
+    {
+      "title": {
+        "gl": "The witch that rules over time",
+        "jp": "時間を統べる魔女"
+      },
+      "event": "ultimecia",
+      "chara": [
+        "ultimecia",
+        "squall",
+        "paine",
+        "deuce"
+      ],
+      "id": 61,
+      "dates": {
+        "gl": [
+          "2019-11-28T00:00:00+00:00",
+          "2019-12-12T00:00:00+00:00"
+        ],
+        "jp": [
+          "2019-02-22T15:00:00+09:00",
+          "2019-03-08T14:59:59+09:00"
+        ]
+      },
+      "lcDates": {}
+    }
+  ],
+  "crystal_awakenings": [
+    {
+      "title": {
+        "gl": "Lv. 70 Crystal Awakenings Pt. 4",
+        "jp": ""
+      },
+      "chara": [
+        "yang",
+        "cecil",
+        "vincent",
+        "garnet",
+        "cloud",
+        "seifer"
+      ],
+      "dates": {
+        "gl": ["2019-11-07T02:30:00+00:00", "2019-11-21T02:30:00+00:00"],
+        "jp": []
+      }
+    },
+    {
+      "title": {
+        "gl": "Lv. 70 Crystal Awakenings Pt. 3",
+        "jp": ""
+      },
+      "chara": [
+        "ace",
+        "aerith",
+        "serah",
+        "locke"
+      ],
+      "dates": {
+        "gl": ["2019-10-14T02:30:00+00:00", "2019-10-21T02:30:00+00:00"],
+        "jp": []
+      }
+    },
+    {
+      "title": {
+        "gl": "Lv. 70 Crystal Awakenings Pt. 2",
+        "jp": ""
+      },
+      "chara": [
+        "seven",
+        "faris",
+        "terra",
+        "yuna",
+        "zack",
+        "ramza"
+      ],
+      "dates": {
+        "gl": ["2019-09-19T02:00:00+00:00", "2019-10-03T02:00:00+00:00"],
+        "jp": []
+      }
+    },
+    {
+      "title": {
+        "gl": "Lv. 70 Crystal Awakenings Pt. 1",
+        "jp": ""
+      },
+      "chara": [
+        "sazh",
+        "laguna",
+        "yda",
+        "warrior_of_light",
+        "shantotto",
+        "cater"
+      ],
+      "dates": {
+        "gl": ["2019-08-29T02:00:00+00:00", "2019-08-12T02:00:00+00:00"],
+        "jp": []
+      }
+    }
+  ],
+  "sBoards": [
+    {
+      "title": {
+        "gl": "World of Illusion Ultimate: Leviathan",
+        "jp": "幻獣界アルティメット 〜リヴァイアサン〜"
+      },
+      "chara": [
+        "krile",
+        "zell",
+        "kefka",
+        "tifa",
+        "laguna",
+        "shantotto"
+      ],
+      "summon": "leviathan",
+      "boardId": 4,
+      "dates": {
+        "gl": "2019-11-18T00:00:00+00:00",
+        "jp": "2019-02-13T15:00:00+09:00"
+      }
+    }
+  ]
+}

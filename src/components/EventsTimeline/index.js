@@ -155,7 +155,7 @@ const Lane = React.memo(({ onClickEvent, lane, limits, width }) => {
       + ' ~ ' + moment(eventDateEnd).format('YY/MMM/DD HH:mm')
     const charactersTooltips = R.pipe(
       R.map(formatCharacterName),
-    )(event.chara)
+    )(event.glChara || event.chara)
 
     bars = [
       ...bars,

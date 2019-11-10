@@ -1,4 +1,5 @@
 import scrappedEvents from '../data/scrappedPastEvents.json'
+import manualEvents from '../data/manualEvents.json'
 import * as R from 'ramda'
 import moment from 'moment'
 import localCharacterList from '../data/characterList'
@@ -128,6 +129,11 @@ const createDffoodbParser = (realm) => {
       sBoards,
       story,
     } = scrappedEvents
+    const {
+      events: manualEventsEvents,
+      crystal_awakenings,
+      sBoards: manualSboards
+    } = manualEvents
 
     const realmFilter = _filterByRealm()
     const sorter = _sortByEndDate()
@@ -137,10 +143,11 @@ const createDffoodbParser = (realm) => {
       sorter,
       R.reverse,
     )([
-      ..._expandLostChapters(events),
+      ..._expandLostChapters([...events, ...manualEventsEvents]),
       ..._expandEventsWithNoEndDate(story),
-      ..._expandEventsWithNoEndDate(sBoards),
+      ..._expandEventsWithNoEndDate([...sBoards, ...manualSboards]),
       ...raids,
+      ...crystal_awakenings,
     ])
   }
 
