@@ -83,6 +83,31 @@
         ]
       },
       "lcDates": {}
+    },
+    {
+      "title": {
+        "gl": "Neverending struggle",
+        "jp": "戦いの輪廻"
+      },
+      "event": "garland",
+      "chara": [
+        "garland",
+        "warrior_of_light",
+        "sephiroth",
+        "fang"
+      ],
+      "id": 60,
+      "dates": {
+        "gl": [
+          "2019-11-14T00:00:00+00:00",
+          "2019-11-28T00:00:00+00:00"
+        ],
+        "jp": [
+          "2019-02-08T15:00:00+09:00",
+          "2019-03-13T14:59:59+09:00"
+        ]
+      },
+      "lcDates": {}
     }
   ],
   "crystal_awakenings": [
