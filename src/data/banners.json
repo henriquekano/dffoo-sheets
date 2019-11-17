@@ -1,0 +1,423 @@
+[
+  {
+    "title": {
+      "jp": "Leviathan summon board"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/253.jpg",
+    "dates": {
+      "jp": [
+        "2019-02-12",
+        "2019-02-26"
+      ]
+    },
+    "chara": [
+      "laguna",
+      "zell",
+      "krile"
+    ],
+    "ex": [
+      "zell",
+      "krile"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Dunno"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/254.jpg",
+    "dates": {
+      "jp": [
+        "2019-02-12",
+        "2019-02-26"
+      ]
+    },
+    "chara": [
+      "tifa",
+      "kefka",
+      "shantotto"
+    ],
+    "ex": [
+      "tifa",
+      "kefka"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Deuce LC"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/255.jpg",
+    "dates": {
+      "jp": [
+        "2019-02-19",
+        "2019-03-05"
+      ]
+    },
+    "chara": [
+      "deuce",
+      "ace",
+      "aerith"
+    ],
+    "ex": [
+      "deuce",
+      "ace"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Ultimecia event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/256.jpg",
+    "dates": {
+      "jp": [
+        "2019-02-22",
+        "2019-03-08"
+      ]
+    },
+    "chara": [
+      "squall",
+      "ultimecia",
+      "paine"
+    ],
+    "ex": [
+      "ultimecia",
+      "squall"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Lilisette and Kuja Ex+"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/257.jpg",
+    "dates": {
+      "jp": [
+        "2019-02-28",
+        "2019-03-14"
+      ]
+    },
+    "chara": [
+      "lilisette",
+      "kuja",
+      "palom"
+    ],
+    "ex": [
+      "lilisette",
+      "kuja"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Zidane and Lenna EX+"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/258.jpg",
+    "dates": {
+      "jp": [
+        "2019-02-28",
+        "2019-03-14"
+      ]
+    },
+    "chara": [
+      "rydia",
+      "zidane",
+      "lenna"
+    ],
+    "ex": [
+      "lenna",
+      "zidane"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Agrias LC"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/259.jpg",
+    "dates": {
+      "jp": [
+        "2019-03-05",
+        "2019-03-19"
+      ]
+    },
+    "chara": [
+      "ashe",
+      "agrias",
+      "faris"
+    ],
+    "ex": [
+      "faris",
+      "agrias"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Machina event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/260.jpg",
+    "dates": {
+      "jp": [
+        "2019-03-08",
+        "2019-03-22"
+      ]
+    },
+    "chara": [
+      "rem",
+      "cid",
+      "machina"
+    ],
+    "ex": [
+      "machina",
+      "rem"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Lyze event"
+    },
+    "image": "https://img.altema.jp/dffoo/uploads/2019/03/2019y03m13d_1514450765.jpg",
+    "dates": {
+      "jp": [
+        "2019-03-14",
+        "2019-03-28"
+      ]
+    },
+    "chara": [
+      "y'shtola",
+      "alisaie",
+      "lyse"
+    ],
+    "ex": [
+      "y'shtola",
+      "lyse"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Locke and Celex EX+"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/262.jpg",
+    "dates": {
+      "jp": [
+        "2019-03-19",
+        "2019-04-02"
+      ]
+    },
+    "chara": [
+      "locke",
+      "celes",
+      "setzer"
+    ],
+    "ex": [
+      "celes",
+      "locke"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Basch event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/263.jpg",
+    "dates": {
+      "jp": [
+        "2019-03-22",
+        "2019-04-05"
+      ]
+    },
+    "chara": [
+      "vaan",
+      "basch",
+      "serah"
+    ],
+    "ex": [
+      "vaan",
+      "basch"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Cait and Balthier EX+"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/264.jpg",
+    "dates": {
+      "jp": [
+        "2019-03-29",
+        "2019-04-12"
+      ]
+    },
+    "chara": [
+      "caith sith",
+      "fujin",
+      "balthier"
+    ],
+    "ex": [
+      "caith sith",
+      "balthier"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Vivi and Thancred EX+"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/265.jpg",
+    "dates": {
+      "jp": [
+        "2019-03-29",
+        "2019-04-12"
+      ]
+    },
+    "chara": [
+      "vivi",
+      "freya",
+      "thancred"
+    ],
+    "ex": [
+      "thancred",
+      "vivi"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Barret LC"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/266.jpg",
+    "dates": {
+      "jp": [
+        "2019-04-05",
+        "2019-04-19"
+      ]
+    },
+    "chara": [
+      "tifa",
+      "barret",
+      "maria"
+    ],
+    "ex": [
+      "tifa",
+      "barret"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Kimahri event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/267.jpg",
+    "dates": {
+      "jp": [
+        "2019-04-10",
+        "2019-04-24"
+      ]
+    },
+    "chara": [
+      "yuna",
+      "kimahri",
+      "noel"
+    ],
+    "ex": [
+      "yuna",
+      "kimahri"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Rosa LC"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/268.jpg",
+    "dates": {
+      "jp": [
+        "2019-04-16",
+        "2019-04-30"
+      ]
+    },
+    "chara": [
+      "rosa",
+      "yuri",
+      "sabin"
+    ],
+    "ex": [
+      "rosa",
+      "sabin"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Emperor event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/269.jpg",
+    "dates": {
+      "jp": [
+        "2019-04-23",
+        "2019-05-07"
+      ]
+    },
+    "chara": [
+      "emperor",
+      "firion",
+      "gilgamesh"
+    ],
+    "ex": [
+      "firion",
+      "emperor"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Something"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/270.jpg",
+    "dates": {
+      "jp": [
+        "2019-04-26",
+        "2019-05-10"
+      ]
+    },
+    "chara": [
+      "serah",
+      "setzer",
+      "vanille"
+    ],
+    "ex": [
+      "serah",
+      "setzer",
+      "vanille"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Yuffie and Bartz EX+"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/283.jpg",
+    "dates": {
+      "jp": [
+        "2019-04-26",
+        "2019-05-10"
+      ]
+    },
+    "chara": [
+      "bartz",
+      "galuf",
+      "yuffie"
+    ],
+    "ex": [
+      "bartz",
+      "yuffie"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Paine and Zidane EX+"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/284.jpg",
+    "dates": {
+      "jp": [
+        "2019-04-26",
+        "2019-05-10"
+      ]
+    },
+    "chara": [
+      "paine",
+      "zidane",
+      "shadow"
+    ],
+    "ex": [
+      "zidane",
+      "paine"
+    ]
+  }
+]

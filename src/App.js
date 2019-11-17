@@ -31,6 +31,7 @@ import {
 } from 'ramda'
 import tableIcons from './icons'
 import characterList from './data/characterList'
+import banners from './data/banners.json'
 import summonBoards from './data/summonBoards'
 import {
   createDffoodbParser,
@@ -39,6 +40,7 @@ import {
 import { EventsTimeline } from './components'
 
 const dffoodb = createDffoodbParser('global')
+const jpnDdffo = createDffoodbParser('jpn')
 
 const IS_DEV = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
 const log = (...stuff) => {
@@ -447,9 +449,28 @@ class App extends PureComponent {
         dffoodb.getEvents()
       )
     )
+    const bannersLanes = jpnDdffo.calculateEventsInPercentage(
+      jpnDdffo.organizeEventsInLanes(
+        banners
+      )
+    )
 
     return (
       <>
+        <Card>
+          <CardContent>
+            <Typography variant="h5" component="h1">
+              Banners history
+            </Typography>
+            <Box style={{ padding: 10 }}>
+              <EventsTimeline
+                lanes={bannersLanes.data}
+                limits={bannersLanes.limits}
+                onClickEvent={() => null}
+              />
+            </Box>
+          </CardContent>
+        </Card>
         <Card>
           <CardContent>
             <Typography variant="h5" component="h1">

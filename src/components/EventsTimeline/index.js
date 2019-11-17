@@ -3,8 +3,10 @@ import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 import Tooltip from '@material-ui/core/Tooltip'
 import Button from '@material-ui/core/Button'
+import Card from '@material-ui/core/Card'
 import moment from 'moment'
 import * as R from 'ramda'
+import Image from './Image'
 
 function useForceUpdate(){
   const [, set] = useState(true); //boolean state
@@ -140,8 +142,8 @@ const Lane = React.memo(({ onClickEvent, lane, limits, width }) => {
 
   let bars = []
   for (let event of lane) {
-    const eventTitle = event.title.gl
-    const [eventStartDateString, eventEndDateString] = event.dates.gl
+    const eventTitle = event.title.gl || event.title.jp
+    const [eventStartDateString, eventEndDateString] = event.dates.gl || event.dates.jp
     const eventStartDate = moment(eventStartDateString)
     const eventEndDate = moment(eventEndDateString)
 
@@ -150,7 +152,7 @@ const Lane = React.memo(({ onClickEvent, lane, limits, width }) => {
     const leftSpacing = (toTimestamp(dateEnd) - toTimestamp(eventEndDate)) * width
       / (toTimestamp(dateEnd) - toTimestamp(dateStart))
 
-    const [eventDateStart, eventDateEnd] = event.dates.gl
+    const [eventDateStart, eventDateEnd] = event.dates.gl || event.dates.jp
     const dateTooltip = moment(eventDateStart).format('YY/MMM/DD HH:mm')
       + ' ~ ' + moment(eventDateEnd).format('YY/MMM/DD HH:mm')
     const charactersTooltips = R.pipe(
@@ -179,22 +181,46 @@ const Lane = React.memo(({ onClickEvent, lane, limits, width }) => {
         }
         placement="bottom"
       >
-        <Button
-          variant="contained"
-          key={eventTitle}
-          style={{
-            position: 'absolute',
-            backgroundColor: randomColorGenerator.next().value,
-            minHeight: 30,
-            width: barWidth,
-            left: leftSpacing,
-            top: 0,
-            padding: 0,
-          }}
-          onClick={() => onClickEvent(event)}
-        >
-          { eventTitle }
-        </Button>
+        {
+          !event.image
+            ? (
+              <Button
+                variant="contained"
+                key={eventTitle}
+                style={{
+                  position: 'absolute',
+                  backgroundColor: randomColorGenerator.next().value,
+                  minHeight: 30,
+                  width: barWidth,
+                  left: leftSpacing,
+                  top: 0,
+                  padding: 0,
+                }}
+                onClick={() => onClickEvent(event)}
+              >
+                { eventTitle }
+              </Button>
+            )
+            : (
+              <Card
+                style={{
+                  position: 'absolute',
+                  width: barWidth,
+                  left: leftSpacing,
+                  top: 0,
+                  padding: 0,
+                }}
+              >
+                <Image
+                  src={event.image}
+                  style={{
+                    width: '100%',
+                    minHeight: 100,
+                  }}
+                />
+              </Card>
+            )
+        }
       </Tooltip>
     ]
   }

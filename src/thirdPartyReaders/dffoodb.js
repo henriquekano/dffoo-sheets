@@ -216,8 +216,9 @@ const createDffoodbParser = (realm) => {
             R.maxBy((event) =>
               toTimeStamp(event.dates[_realmToAccronym(realm)][1])
             ),
-            { dates: { [_realmToAccronym(realm)]: [Infinity] } },
+            { dates: { [_realmToAccronym(realm)]: [0, 0] } },
           ),
+          R.tap(console.log),
           R.path(['dates', _realmToAccronym(realm), 1]),
         )
       ]),
