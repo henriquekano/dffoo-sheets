@@ -419,5 +419,310 @@
       "zidane",
       "paine"
     ]
+  },
+  {
+    "title": {
+      "jp": "Golden week 1"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/273.jpg",
+    "dates": {
+      "jp": [
+        "2019-04-28",
+        "2019-04-28"
+      ]
+    },
+    "chara": [
+      "sherlotta",
+      "lilisette"
+    ],
+    "ex": [
+      "sherlotta",
+      "lilisette"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Golden week 2"
+    },
+    "image": "https://img.altema.jp/dffoo/uploads/2019/04/2019y04m28d_1518130491.jpg",
+    "dates": {
+      "jp": [
+        "2019-04-29",
+        "2019-04-29"
+      ]
+    },
+    "chara": [
+      "zell",
+      "noel"
+    ],
+    "ex": [
+      "zell",
+      "noel"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Golden week 3"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/275.jpg",
+    "dates": {
+      "jp": [
+        "2019-04-30",
+        "2019-04-30"
+      ]
+    },
+    "chara": [
+      "porom",
+      "vincent"
+    ],
+    "ex": [
+      "porom",
+      "vincent"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Golden week 4"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/276.jpg",
+    "dates": {
+      "jp": [
+        "2019-05-01",
+        "2019-05-01"
+      ]
+    },
+    "chara": [
+      "leon",
+      "warrior_of_light"
+    ],
+    "ex": [
+      "leon",
+      "warrior_of_light"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Sephiroth & Eiko ex+"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/285.jpg",
+    "dates": {
+      "jp": [
+        "2019-05-01",
+        "2019-05-14"
+      ]
+    },
+    "chara": [
+      "sephiroth",
+      "eiko",
+      "layle"
+    ],
+    "ex": [
+      "sephiroth",
+      "eiko"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Auron & Maria ex+"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/286.jpg",
+    "dates": {
+      "jp": [
+        "2019-05-01",
+        "2019-05-14"
+      ]
+    },
+    "chara": [
+      "auron",
+      "maria",
+      "jecht"
+    ],
+    "ex": [
+      "auron",
+      "maria"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Golden week 5"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/277.jpg",
+    "dates": {
+      "jp": [
+        "2019-05-02",
+        "2019-05-02"
+      ]
+    },
+    "chara": [
+      "tidus",
+      "paine"
+    ],
+    "ex": [
+      "tidus",
+      "paine"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Golden week 6"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/278.jpg",
+    "dates": {
+      "jp": [
+        "2019-05-03",
+        "2019-05-03"
+      ]
+    },
+    "chara": [
+      "rydia",
+      "ace"
+    ],
+    "ex": [
+      "rydia",
+      "ace"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Golden week 7"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/279.jpg",
+    "dates": {
+      "jp": [
+        "2019-05-04",
+        "2019-05-04"
+      ]
+    },
+    "chara": [
+      "ramza",
+      "deuce"
+    ],
+    "ex": [
+      "ramza",
+      "deuce"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Golden week 8"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/280.jpg",
+    "dates": {
+      "jp": [
+        "2019-05-05",
+        "2019-05-05"
+      ]
+    },
+    "chara": [
+      "cecil",
+      "fang"
+    ],
+    "ex": [
+      "cecil",
+      "fang"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Golden week 9"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/281.jpg",
+    "dates": {
+      "jp": [
+        "2019-05-06",
+        "2019-05-06"
+      ]
+    },
+    "chara": [
+      "relm",
+      "krile"
+    ],
+    "ex": [
+      "relm",
+      "krile"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Golden week 10"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/282.jpg",
+    "dates": {
+      "jp": [
+        "2019-05-07",
+        "2019-05-07"
+      ]
+    },
+    "chara": [
+      "kuja",
+      "layle"
+    ],
+    "ex": [
+      "kuja",
+      "layle"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Seven & Golbez EX+"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/271.jpg",
+    "dates": {
+      "jp": [
+        "2019-05-15",
+        "2019-05-22"
+      ]
+    },
+    "chara": [
+      "golbez",
+      "seven",
+      "laguna"
+    ],
+    "ex": [
+      "golbez",
+      "seven"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Eight event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/287.jpg",
+    "dates": {
+      "jp": [
+        "2019-05-20",
+        "2019-05-27"
+      ]
+    },
+    "chara": [
+      "eigth",
+      "king",
+      "quistis"
+    ],
+    "ex": [
+      "eigth",
+      "king"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Ignis event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/288.jpg",
+    "dates": {
+      "jp": [
+        "2019-05-17",
+        "2019-05-31"
+      ]
+    },
+    "chara": [
+      "zack",
+      "ignis",
+      "noctis"
+    ],
+    "ex": [
+      "zack",
+      "ignis"
+    ]
   }
 ]
