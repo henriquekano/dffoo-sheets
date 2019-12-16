@@ -706,7 +706,7 @@
   },
   {
     "title": {
-      "jp": "Ignis event"
+      "jp": "Chapter 2, act 7 event"
     },
     "image": "https://img.altema.jp/dffoo/gacha/main/288.jpg",
     "dates": {
@@ -723,6 +723,258 @@
     "ex": [
       "zack",
       "ignis"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Rinoa LC"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/289.jpg",
+    "dates": {
+      "jp": [
+        "2019-05-22",
+        "2019-06-06"
+      ]
+    },
+    "chara": [
+      "rinoa",
+      "squall",
+      "irvine"
+    ],
+    "ex": [
+      "irvine",
+      "rinoa"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Gau event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/290.jpg",
+    "dates": {
+      "jp": [
+        "2019-05-27",
+        "2019-06-10"
+      ]
+    },
+    "chara": [
+      "gau",
+      "terra",
+      "selphie"
+    ],
+    "ex": [
+      "gau",
+      "terra"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Crystal awakening x 1"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/291.jpg",
+    "dates": {
+      "jp": [
+        "2019-05-31",
+        "2019-06-14"
+      ]
+    },
+    "chara": [
+      "onion_knight",
+      "yuri",
+      "ashe"
+    ],
+    "ex": [
+      "onion_knight",
+      "yuri"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Crystal awakening x 2"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/292.jpg",
+    "dates": {
+      "jp": [
+        "2019-05-31",
+        "2019-06-14"
+      ]
+    },
+    "chara": [
+      "prishe",
+      "kefka",
+      "raijin"
+    ],
+    "ex": [
+      "prishe",
+      "kefka"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Lulu LC"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/293.jpg",
+    "dates": {
+      "jp": [
+        "2019-06-06",
+        "2019-06-20"
+      ]
+    },
+    "chara": [
+      "lulu",
+      "jecht",
+      "wakka"
+    ],
+    "ex": [
+      "lulu",
+      "jecht"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Kam'lanaut event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/294.jpg",
+    "dates": {
+      "jp": [
+        "2019-06-11",
+        "2019-06-25"
+      ]
+    },
+    "chara": [
+      "kamlanaut",
+      "shantotto",
+      "rydia"
+    ],
+    "ex": [
+      "kamlanaut",
+      "shantotto"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Brothers Summon board 1"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/295.jpg",
+    "dates": {
+      "jp": [
+        "2019-06-14",
+        "2019-06-28"
+      ]
+    },
+    "chara": [
+      "edge",
+      "yshtola",
+      "penelo"
+    ],
+    "ex": [
+      "edge",
+      "penelo"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Brothers Summon board 2"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/296.jpg",
+    "dates": {
+      "jp": [
+        "2019-06-14",
+        "2019-06-28"
+      ]
+    },
+    "chara": [
+      "vivi",
+      "lion",
+      "freya"
+    ],
+    "ex": [
+      "vivi",
+      "lion"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Lann & Reynn LC"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/297.jpg",
+    "dates": {
+      "jp": [
+        "2019-06-20",
+        "2019-07-04"
+      ]
+    },
+    "chara": [
+      "lann&reynn",
+      "edgar",
+      "faris"
+    ],
+    "ex": [
+      "lann&reynn",
+      "edgar"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Ciaran event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/298.jpg",
+    "dates": {
+      "jp": [
+        "2019-06-25",
+        "2019-07-09"
+      ]
+    },
+    "chara": [
+      "ciaran",
+      "layle",
+      "krile"
+    ],
+    "ex": [
+      "ciaran",
+      "layle"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Crystal awakening x2 1"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/301.jpg",
+    "dates": {
+      "jp": [
+        "2019-06-28",
+        "2019-07-12"
+      ]
+    },
+    "chara": [
+      "seymour",
+      "papalymo",
+      "snow"
+    ],
+    "ex": [
+      "seymour",
+      "papalymo"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Crystal awakening x2 2"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/302.jpg",
+    "dates": {
+      "jp": [
+        "2019-06-28",
+        "2019-07-12"
+      ]
+    },
+    "chara": [
+      "cid",
+      "quistis",
+      "kain"
+    ],
+    "ex": [
+      "cid",
+      "quistis"
     ]
   }
 ]

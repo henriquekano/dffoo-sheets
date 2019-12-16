@@ -78,32 +78,36 @@ const DateOverlay = React.memo(({
   }
 
   let timeSeparators = []
-  let date = moment(dateEnd)
+
+  // create divisors for calculated time steps
+  let date = moment(dateEnd).startOf('day')
   while (!date.isBefore(dateStart)) {
-    const formattedDate = date.format('YY/MMM/DD')
     const leftSpacing = (toTimestamp(dateEnd) - toTimestamp(date)) * width / (toTimestamp(dateEnd) - toTimestamp(dateStart))
     timeSeparators = [
       ...timeSeparators,
       <DateIndicator
-        key={formattedDate}
-        date={formattedDate}
+        key={date.format('YYYY/MM/DD-day')}
+        date={date.format('DD')}
+        color="lightgrey"
         style={{
           position: 'absolute',
           left: leftSpacing,
-          top: 0,
+          bottom: 0,
+          height: '97%',
         }}
       />,
     ]
     date = date.subtract(daysInterval, 'days')
   }
 
-  const formattedDate = moment().format('YY/MMM/DD')
+  // add 'today' separator
   const leftSpacing = (toTimestamp(dateEnd) - toTimestamp(moment())) * width
     / (toTimestamp(dateEnd) - toTimestamp(dateStart))
   timeSeparators = [
     ...timeSeparators,
     <DateIndicator
-      key={formattedDate}
+      key={moment().format('YYYY/MM/DD-today')}
+      date="today"
       color="red"
       style={{
         position: 'absolute',
@@ -112,6 +116,27 @@ const DateOverlay = React.memo(({
       }}
     />,
   ]
+
+  // add month beginning separators
+  const begginningMonth = moment(dateStart).add(1, 'month').startOf('month')
+  while(begginningMonth.isBefore(dateEnd)) {
+    const leftSpacing = (toTimestamp(dateEnd) - toTimestamp(begginningMonth)) * width
+      / (toTimestamp(dateEnd) - toTimestamp(dateStart))
+    timeSeparators = [
+      ...timeSeparators,
+      <DateIndicator
+        key={begginningMonth.format('YYYY/MM/DD-month')}
+        date={begginningMonth.format('YYYY/MMM')}
+        color="black"
+        style={{
+          position: 'absolute',
+          left: leftSpacing,
+          top: 0,
+        }}
+      />,
+    ]
+    begginningMonth.add(1, 'month')
+  }
 
   return timeSeparators
 })
