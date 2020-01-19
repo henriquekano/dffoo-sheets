@@ -440,6 +440,7 @@ class App extends PureComponent {
         field: `${summonName.toLowerCase()}_sb_level`,
         type: 'numeric',
         cellStyle: { color: '#ffffff', fontSize: 16 },
+        customSort: (first, second) => (first[`${summonName.toLowerCase()}_sb_level`] || 0) - (second[`${summonName.toLowerCase()}_sb_level`] || 0)
       })
     )
     log('render', this.state)
