@@ -111,6 +111,8 @@ const list = [
   'Machina',
   'Lyse',
   'Basch',
+  'Kimahri',
+  'The Emperor'
 ]
 // reminder: add only at the bottom of the list
 

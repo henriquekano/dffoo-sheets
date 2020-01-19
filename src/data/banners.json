@@ -427,8 +427,8 @@
     "image": "https://img.altema.jp/dffoo/gacha/main/273.jpg",
     "dates": {
       "jp": [
-        "2019-04-28",
-        "2019-04-28"
+        "2019-04-28T00:00:00",
+        "2019-04-28T23:59:59"
       ]
     },
     "chara": [
@@ -447,8 +447,8 @@
     "image": "https://img.altema.jp/dffoo/uploads/2019/04/2019y04m28d_1518130491.jpg",
     "dates": {
       "jp": [
-        "2019-04-29",
-        "2019-04-29"
+        "2019-04-29T00:00:00",
+        "2019-04-29T23:59:59"
       ]
     },
     "chara": [
@@ -467,8 +467,8 @@
     "image": "https://img.altema.jp/dffoo/gacha/main/275.jpg",
     "dates": {
       "jp": [
-        "2019-04-30",
-        "2019-04-30"
+        "2019-04-30T00:00:00",
+        "2019-04-30T23:59:59"
       ]
     },
     "chara": [
@@ -487,8 +487,8 @@
     "image": "https://img.altema.jp/dffoo/gacha/main/276.jpg",
     "dates": {
       "jp": [
-        "2019-05-01",
-        "2019-05-01"
+        "2019-05-01T00:00:00",
+        "2019-05-01T23:59:59"
       ]
     },
     "chara": [
@@ -549,8 +549,8 @@
     "image": "https://img.altema.jp/dffoo/gacha/main/277.jpg",
     "dates": {
       "jp": [
-        "2019-05-02",
-        "2019-05-02"
+        "2019-05-02T00:00:00",
+        "2019-05-02T23:59:59"
       ]
     },
     "chara": [
@@ -569,8 +569,8 @@
     "image": "https://img.altema.jp/dffoo/gacha/main/278.jpg",
     "dates": {
       "jp": [
-        "2019-05-03",
-        "2019-05-03"
+        "2019-05-03T00:00:00",
+        "2019-05-03T23:59:59"
       ]
     },
     "chara": [
@@ -589,8 +589,8 @@
     "image": "https://img.altema.jp/dffoo/gacha/main/279.jpg",
     "dates": {
       "jp": [
-        "2019-05-04",
-        "2019-05-04"
+        "2019-05-04T00:00:00",
+        "2019-05-04T23:59:59"
       ]
     },
     "chara": [
@@ -609,8 +609,8 @@
     "image": "https://img.altema.jp/dffoo/gacha/main/280.jpg",
     "dates": {
       "jp": [
-        "2019-05-05",
-        "2019-05-05"
+        "2019-05-05T00:00:00",
+        "2019-05-05T23:59:59"
       ]
     },
     "chara": [
@@ -629,8 +629,8 @@
     "image": "https://img.altema.jp/dffoo/gacha/main/281.jpg",
     "dates": {
       "jp": [
-        "2019-05-06",
-        "2019-05-06"
+        "2019-05-06T00:00",
+        "2019-05-06T23:59:59"
       ]
     },
     "chara": [
@@ -649,8 +649,8 @@
     "image": "https://img.altema.jp/dffoo/gacha/main/282.jpg",
     "dates": {
       "jp": [
-        "2019-05-07",
-        "2019-05-07"
+        "2019-05-07T00:00",
+        "2019-05-07T23:59:59"
       ]
     },
     "chara": [
@@ -690,7 +690,7 @@
     "image": "https://img.altema.jp/dffoo/gacha/main/287.jpg",
     "dates": {
       "jp": [
-        "2019-05-20",
+        "2019-05-13",
         "2019-05-27"
       ]
     },
@@ -975,6 +975,177 @@
     "ex": [
       "cid",
       "quistis"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Vayne LC"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/299.jpg",
+    "dates": {
+      "jp": [
+        "2019-07-04",
+        "2019-07-18"
+      ]
+    },
+    "chara": [
+      "vayne",
+      "paladin_cecil",
+      "cyan"
+    ],
+    "ex": [
+      "vayne",
+      "paladin_cecil"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Beatrix LC"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/303.jpg",
+    "dates": {
+      "jp": [
+        "2019-07-08",
+        "2019-07-22"
+      ]
+    },
+    "chara": [
+      "beatrix",
+      "vanille",
+      "steiner"
+    ],
+    "ex": [
+      "beatrix",
+      "steiner"
+    ]
+  },
+  {
+    "title": {
+      "jp": "No idea"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/304.jpg",
+    "dates": {
+      "jp": [
+        "2019-07-12",
+        "2019-07-26"
+      ]
+    },
+    "chara": [
+      "noctis",
+      "lyse",
+      "selphie"
+    ],
+    "ex": [
+      "noctis",
+      "lyse",
+      "selphie"
+    ]
+  },
+  {
+    "title": {
+      "jp": "No idea 2"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/305.jpg",
+    "dates": {
+      "jp": [
+        "2019-07-12",
+        "2019-07-26"
+      ]
+    },
+    "chara": [
+      "barret",
+      "rosa",
+      "agrias"
+    ],
+    "ex": [
+      "barret",
+      "rosa",
+      "agrias"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Leo event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/306.jpg",
+    "dates": {
+      "jp": [
+        "2019-07-17",
+        "2019-07-31"
+      ]
+    },
+    "chara": [
+      "leo",
+      "galuf",
+      "lillisete"
+    ],
+    "ex": [
+      "leo",
+      "galuf"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Fran LC"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/300.jpg",
+    "dates": {
+      "jp": [
+        "2019-07-22",
+        "2019-08-05"
+      ]
+    },
+    "chara": [
+      "ashe",
+      "fran",
+      "balthier"
+    ],
+    "ex": [
+      "ashe",
+      "fran"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Exdeath event"
+    },
+    "image": "https://img.altema.jp/dffoo/uploads/2019/07/2019y07m25d_150812884.jpg",
+    "dates": {
+      "jp": [
+        "2019-07-25",
+        "2019-08-08"
+      ]
+    },
+    "chara": [
+      "exdeath",
+      "gilgamesh",
+      "warrior_of_light"
+    ],
+    "ex": [
+      "exdeath",
+      "gilgamesh"
+    ]
+  },
+  {
+    "title": {
+      "jp": "No idea 4"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/308.jpg",
+    "dates": {
+      "jp": [
+        "2019-07-01",
+        "2019-08-15"
+      ]
+    },
+    "chara": [
+      "lightining",
+      "shadow",
+      "hope"
+    ],
+    "ex": [
+      "lightining",
+      "shadow",
+      "hope"
     ]
   }
 ]

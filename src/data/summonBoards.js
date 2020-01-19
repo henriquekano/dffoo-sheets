@@ -3,4 +3,5 @@ export default [
   'Ifrit',
   'Ramuh',
   'Leviathan',
+  'Brothers'
 ]
