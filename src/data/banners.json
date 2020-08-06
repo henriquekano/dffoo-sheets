@@ -1133,7 +1133,7 @@
     "image": "https://img.altema.jp/dffoo/gacha/main/308.jpg",
     "dates": {
       "jp": [
-        "2019-07-01",
+        "2019-08-01",
         "2019-08-15"
       ]
     },
@@ -1146,6 +1146,1085 @@
       "lightining",
       "shadow",
       "hope"
+    ]
+  },
+  {
+    "title": {
+      "jp": "No idea 5"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/309.jpg",
+    "dates": {
+      "jp": [
+        "2019-08-01",
+        "2019-08-15"
+      ]
+    },
+    "chara": [
+      "cyan",
+      "wakka"
+    ],
+    "ex": []
+  },
+  {
+    "title": {
+      "jp": "Porom LC"
+    },
+    "image": "https://img.altema.jp/dffoo/uploads/2019/08/2019y08m06d_1505093536.jpg",
+    "dates": {
+      "jp": [
+        "2019-08-06",
+        "2019-08-20"
+      ]
+    },
+    "chara": [
+      "porom",
+      "yang",
+      "palom"
+    ],
+    "ex": [
+      "porom",
+      "yang"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Caius LC"
+    },
+    "image": "https://img.altema.jp/dffoo/uploads/2019/08/2019y08m09d_1707100693.jpg",
+    "dates": {
+      "jp": [
+        "2019-08-09",
+        "2019-08-23"
+      ]
+    },
+    "chara": [
+      "caius",
+      "lyse",
+      "noel"
+    ],
+    "ex": [
+      "caius",
+      "noel"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Summer event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/313.jpg",
+    "dates": {
+      "jp": [
+        "2019-08-09",
+        "2019-08-23"
+      ]
+    },
+    "chara": [
+      "all"
+    ],
+    "ex": [
+      "all"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Diabolos Banner 1"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/314.jpg",
+    "dates": {
+      "jp": [
+        "2019-08-16",
+        "2019-08-30"
+      ]
+    },
+    "chara": [
+      "wakka",
+      "aerith",
+      "deuce"
+    ],
+    "ex": [
+      "wakka",
+      "aerith"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Diabolos Banner 2"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/315.jpg",
+    "dates": {
+      "jp": [
+        "2019-08-16",
+        "2019-08-30"
+      ]
+    },
+    "chara": [
+      "vaan",
+      "kuja",
+      "sabin"
+    ],
+    "ex": [
+      "kuja",
+      "sabin"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Cinque LC"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/311.jpg",
+    "dates": {
+      "jp": [
+        "2019-08-22",
+        "2019-09-05"
+      ]
+    },
+    "chara": [
+      "cinque",
+      "snow",
+      "cait sith"
+    ],
+    "ex": [
+      "cinque",
+      "snow"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Jack event"
+    },
+    "image": "https://img.altema.jp/dffoo/uploads/2019/08/2019y08m26d_1511465739.jpg",
+    "dates": {
+      "jp": [
+        "2019-09-26",
+        "2019-09-09"
+      ]
+    },
+    "chara": [
+      "jack",
+      "ramza",
+      "ignis"
+    ],
+    "ex": [
+      "jack",
+      "ramza"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Act x"
+    },
+    "image": "https://img.altema.jp/dffoo/uploads/2019/08/2019y08m30d_1518079404.jpg",
+    "dates": {
+      "jp": [
+        "2019-08-30",
+        "2019-09-13"
+      ]
+    },
+    "chara": [
+      "seifer",
+      "lenna",
+      "fang"
+    ],
+    "ex": [
+      "seifer",
+      "lenna"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Act x"
+    },
+    "image": "https://img.altema.jp/dffoo/uploads/2019/08/2019y08m30d_1518145333.jpg",
+    "dates": {
+      "jp": [
+        "2019-08-30",
+        "2019-09-13"
+      ]
+    },
+    "chara": [
+      "ace",
+      "faris",
+      "relm"
+    ],
+    "ex": [
+      "ace",
+      "faris"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Promptyo LC"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/316.jpg",
+    "dates": {
+      "jp": [
+        "2019-09-05",
+        "2019-09-19"
+      ]
+    },
+    "chara": [
+      "prompto",
+      "freya",
+      "king"
+    ],
+    "ex": [
+      "prompto",
+      "freya"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Arciela event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/320.jpg",
+    "dates": {
+      "jp": [
+        "2019-09-10",
+        "2019-09-24"
+      ]
+    },
+    "chara": [
+      "arciela",
+      "prishe",
+      "rinoa"
+    ],
+    "ex": [
+      "arciela",
+      "prishe"
+    ]
+  },
+  {
+    "title": {
+      "jp": "No idea 6"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/322.jpg",
+    "dates": {
+      "jp": [
+        "2019-09-10",
+        "2019-09-24"
+      ]
+    },
+    "chara": [
+      "fujin",
+      "cyan",
+      "vanille"
+    ],
+    "ex": [
+      "fujin",
+      "cyan",
+      "vanille"
+    ]
+  },
+  {
+    "title": {
+      "jp": "No idea 7"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/323.jpg",
+    "dates": {
+      "jp": [
+        "2019-09-10",
+        "2019-09-24"
+      ]
+    },
+    "chara": [
+      "setzer",
+      "paladin cecil",
+      "balthier"
+    ],
+    "ex": [
+      "setzer",
+      "paladin cecil",
+      "balthier"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Alphinaud Event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/321.jpg",
+    "dates": {
+      "jp": [
+        "2019-09-18",
+        "2019-10-02"
+      ]
+    },
+    "chara": [
+      "alphinaud",
+      "yda",
+      "celes"
+    ],
+    "ex": [
+      "alphinaud",
+      "yda"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Keiss Event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/324.jpg",
+    "dates": {
+      "jp": [
+        "2019-09-24",
+        "2019-10-08"
+      ]
+    },
+    "chara": [
+      "zidane",
+      "keiss",
+      "cloud"
+    ],
+    "ex": [
+      "zidane",
+      "keiss"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Cloud of darkness Event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/325.jpg",
+    "dates": {
+      "jp": [
+        "2019-10-01",
+        "2019-10-15"
+      ]
+    },
+    "chara": [
+      "cloud of darkness",
+      "kefka",
+      "ace"
+    ],
+    "ex": [
+      "cloud of darkness",
+      "kefka"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Aphmau Event"
+    },
+    "image": "https://img.altema.jp/dffoo/uploads/2019/10/2019y10m03d_1515352065.jpg",
+    "dates": {
+      "jp": [
+        "2019-10-03",
+        "2019-10-17"
+      ]
+    },
+    "chara": [
+      "aphmau",
+      "lion",
+      "prishe"
+    ],
+    "ex": [
+      "aphmau",
+      "lion"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Eald'narche Event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/327.jpg",
+    "dates": {
+      "jp": [
+        "2019-10-09",
+        "2019-10-23"
+      ]
+    },
+    "chara": [
+      "eald'narche",
+      "garnet",
+      "prishe"
+    ],
+    "ex": [
+      "eald'narche",
+      "garnet"
+    ]
+  },
+  {
+    "title": {
+      "jp": "No idea 7"
+    },
+    "image": "https://img.altema.jp/dffoo/uploads/2019/10/2019y10m10d_1549251444.jpg",
+    "dates": {
+      "jp": [
+        "2019-10-04",
+        "2019-10-18"
+      ]
+    },
+    "chara": [
+      "leo",
+      "cater",
+      "penelo"
+    ],
+    "ex": [
+      "leo",
+      "cater",
+      "penelo"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Alexander Summon board banner 1"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/329.jpg",
+    "dates": {
+      "jp": [
+        "2019-10-17",
+        "2019-10-31"
+      ]
+    },
+    "chara": [
+      "sazh",
+      "raijin",
+      "ashe"
+    ],
+    "ex": [
+      "sazh",
+      "raijin"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Alexander Summon board banner 2"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/330.jpg",
+    "dates": {
+      "jp": [
+        "2019-10-17",
+        "2019-10-31"
+      ]
+    },
+    "chara": [
+      "tidus",
+      "rosa",
+      "firion"
+    ],
+    "ex": [
+      "tidus",
+      "rosa"
+    ]
+  },
+  {
+    "title": {
+      "jp": "No idea 8"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/331.jpg",
+    "dates": {
+      "jp": [
+        "2019-10-09",
+        "2019-10-25"
+      ]
+    },
+    "chara": [
+      "cecil",
+      "emperor",
+      "ignis"
+    ],
+    "ex": [
+      "cecil",
+      "emperor",
+      "ignis"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Sherlotta LC"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/333.jpg",
+    "dates": {
+      "jp": [
+        "2019-10-22",
+        "2019-11-05"
+      ]
+    },
+    "chara": [
+      "sherlotta",
+      "rydia",
+      "seymore"
+    ],
+    "ex": [
+      "sherlotta",
+      "rydia"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Trey Event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/334.jpg",
+    "dates": {
+      "jp": [
+        "2019-10-24",
+        "2019-11-07"
+      ]
+    },
+    "chara": [
+      "trey",
+      "quistis",
+      "fran"
+    ],
+    "ex": [
+      "trey",
+      "quistis"
+    ]
+  },
+  {
+    "title": {
+      "jp": "No idea 9"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/332.jpg",
+    "dates": {
+      "jp": [
+        "2019-10-22",
+        "2019-11-05"
+      ]
+    },
+    "chara": [
+      "beatrix",
+      "edge",
+      "yuri"
+    ],
+    "ex": [
+      "beatrix",
+      "edge",
+      "yuri"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Squall Burst banner 1"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/335.jpg",
+    "dates": {
+      "jp": [
+        "2019-10-31",
+        "2019-11-14"
+      ]
+    },
+    "chara": [
+      "squall",
+      "auron",
+      "steiner"
+    ],
+    "ex": [
+      "squall",
+      "auron",
+      "steiner"
+    ],
+    "ld": [
+      "squall"
+    ],
+    "burst": [
+      "squall"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Squall Burst banner 2"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/336.jpg",
+    "dates": {
+      "jp": [
+        "2019-10-31",
+        "2019-11-14"
+      ]
+    },
+    "chara": [
+      "tifa",
+      "gilgamesh",
+      "cait sith"
+    ],
+    "ex": [
+      "tifa",
+      "gilgamesh",
+      "cait sith"
+    ],
+    "ld": [
+      "squall"
+    ],
+    "burst": [
+      "squall"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Garland LC"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/337.jpg",
+    "dates": {
+      "jp": [
+        "2019-11-06",
+        "2019-11-20"
+      ]
+    },
+    "chara": [
+      "garland",
+      "warrior_of_light",
+      "sephiroth"
+    ],
+    "ex": [
+      "garland",
+      "warrior_of_light",
+      "sephiroth"
+    ],
+    "ld": [
+      "garland"
+    ],
+    "burst": [
+      "squall"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Amidatelion Event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/338.jpg",
+    "dates": {
+      "jp": [
+        "2019-11-11",
+        "2019-11-25"
+      ]
+    },
+    "chara": [
+      "amidatelion",
+      "deuce",
+      "layle"
+    ],
+    "ex": [
+      "amidatelion",
+      "deuce",
+      "layle"
+    ],
+    "ld": [
+      "amidatelion"
+    ],
+    "burst": [
+      "squall"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Shantotto Burst Banner 1"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/340.jpg",
+    "dates": {
+      "jp": [
+        "2019-11-15",
+        "2019-11-29"
+      ]
+    },
+    "chara": [
+      "shantotto",
+      "porom",
+      "krile"
+    ],
+    "ex": [
+      "lulu",
+      "porom",
+      "krile"
+    ],
+    "ld": [
+      "shantotto"
+    ],
+    "burst": [
+      "shantotto"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Shantotto Burst Banner 2"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/339.jpg",
+    "dates": {
+      "jp": [
+        "2019-11-15",
+        "2019-11-29"
+      ]
+    },
+    "chara": [
+      "shantotto",
+      "eiko",
+      "alisaie"
+    ],
+    "ex": [
+      "shantotto",
+      "eiko",
+      "alisaie"
+    ],
+    "ld": [
+      "shantotto"
+    ],
+    "burst": [
+      "shantotto"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Ultimecia LC"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/341.jpg",
+    "dates": {
+      "jp": [
+        "2019-11-20",
+        "2019-12-04"
+      ]
+    },
+    "chara": [
+      "ultimecia",
+      "squall",
+      "paine"
+    ],
+    "ex": [
+      "ultimecia",
+      "squall",
+      "paine"
+    ],
+    "ld": [
+      "ultimecia"
+    ],
+    "burst": [
+      "shantotto"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Desch Event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/342.jpg",
+    "dates": {
+      "jp": [
+        "2019-11-25",
+        "2019-12-09"
+      ]
+    },
+    "chara": [
+      "desch",
+      "onion_knight",
+      "yang"
+    ],
+    "ex": [
+      "desch",
+      "onion_knight",
+      "yang"
+    ],
+    "ld": [
+      "desch"
+    ],
+    "burst": [
+      "shantotto"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Vaan Burst Banner 1"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/344.jpg",
+    "dates": {
+      "jp": [
+        "2019-11-29",
+        "2019-12-13"
+      ]
+    },
+    "chara": [
+      "vaan",
+      "wakka",
+      "lenna",
+      "locke"
+    ],
+    "ex": [
+      "wakka",
+      "lenna",
+      "locke"
+    ],
+    "ld": [
+      "vaan"
+    ],
+    "burst": [
+      "vaan"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Vaan Burst Banner 2"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/343.jpg",
+    "dates": {
+      "jp": [
+        "2019-11-29",
+        "2019-12-13"
+      ]
+    },
+    "chara": [
+      "vaan",
+      "balthier",
+      "gabranth"
+    ],
+    "ex": [
+      "vaan",
+      "balthier",
+      "gabranth"
+    ],
+    "ld": [
+      "vaan"
+    ],
+    "burst": [
+      "vaan"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Machina LC"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/345.jpg",
+    "dates": {
+      "jp": [
+        "2019-12-05",
+        "2019-12-19"
+      ]
+    },
+    "chara": [
+      "machina",
+      "cid",
+      "rem",
+      "vaan"
+    ],
+    "ex": [
+      "machina",
+      "cid",
+      "rem"
+    ],
+    "ld": [
+      "machina"
+    ],
+    "burst": [
+      "vaan"
+    ]
+  },
+  {
+    "title": {
+      "jp": "No idea 10"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/346.jpg",
+    "dates": {
+      "jp": [
+        "2019-12-09",
+        "2019-12-23"
+      ]
+    },
+    "chara": [
+      "vivi",
+      "arciela",
+      "leonhart",
+      "vaan"
+    ],
+    "ex": [
+      "vivi",
+      "arciela",
+      "leonhart"
+    ],
+    "burst": [
+      "vaan"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Noctis Burst Banner 1"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/348.jpg",
+    "dates": {
+      "jp": [
+        "2019-12-13",
+        "2019-12-27"
+      ]
+    },
+    "chara": [
+      "irvine",
+      "fran",
+      "seven",
+      "noctis"
+    ],
+    "ex": [
+      "irvine",
+      "fran",
+      "seven"
+    ],
+    "ld": [
+      "noctis"
+    ],
+    "burst": [
+      "noctis"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Noctis Burst Banner 2"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/347.jpg",
+    "dates": {
+      "jp": [
+        "2019-12-13",
+        "2019-12-27"
+      ]
+    },
+    "chara": [
+      "noctis",
+      "paladin_cecil",
+      "fang"
+    ],
+    "ex": [
+      "noctis",
+      "paladin_cecil",
+      "fang"
+    ],
+    "ld": [
+      "noctis"
+    ],
+    "burst": [
+      "noctis"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Basch LC"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/349.jpg",
+    "dates": {
+      "jp": [
+        "2020-12-23",
+        "2020-01-06"
+      ]
+    },
+    "chara": [
+      "basch",
+      "vaan",
+      "sera"
+    ],
+    "ex": [
+      "basch",
+      "vaan",
+      "sera"
+    ],
+    "ld": [
+      "basch"
+    ],
+    "burst": [
+      "noctis"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Nine Event"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/350.jpg",
+    "dates": {
+      "jp": [
+        "2020-12-23",
+        "2020-01-06"
+      ]
+    },
+    "chara": [
+      "nine",
+      "barret",
+      "fujin"
+    ],
+    "ex": [
+      "nine",
+      "barret",
+      "fujin"
+    ],
+    "ld": [
+      "basch"
+    ],
+    "burst": [
+      "noctis"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Ardyn Burst"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/351.jpg",
+    "dates": {
+      "jp": [
+        "2019-12-27",
+        "2020-01-10"
+      ]
+    },
+    "chara": [
+      "ardyn",
+      "maria",
+      "lilisette"
+    ],
+    "ex": [
+      "ardyn",
+      "maria",
+      "lilisette"
+    ],
+    "ld": [
+      "ardyn"
+    ],
+    "burst": [
+      "ardyn"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Rinoa LD"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/352.jpg",
+    "dates": {
+      "jp": [
+        "2020-01-01",
+        "2020-01-15"
+      ]
+    },
+    "chara": [
+      "rinoa",
+      "kain",
+      "alphinaud",
+      "ardyn"
+    ],
+    "ex": [
+      "rinoa",
+      "kain",
+      "alphinaud"
+    ],
+    "ld": [
+      "rinoa"
+    ],
+    "burst": [
+      "ardyn"
+    ]
+  },
+  {
+    "title": {
+      "jp": "Kimahri LC"
+    },
+    "image": "https://img.altema.jp/dffoo/gacha/main/353.jpg",
+    "dates": {
+      "jp": [
+        "2020-12-27",
+        "2020-01-10"
+      ]
+    },
+    "chara": [
+      "rinoa",
+      "kain",
+      "alphinaud",
+      "ardyn"
+    ],
+    "ex": [
+      "rinoa",
+      "kain",
+      "alphinaud"
+    ],
+    "ld": [
+      "rinoa"
+    ],
+    "burst": [
+      "ardyn"
     ]
   }
 ]
